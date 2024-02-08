@@ -10,14 +10,15 @@ import SwiftUI
 @main
 struct TableDrummerApp: App {
     @State private var viewModel = ViewModel()
+    @State var debugText = ""
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(debugText: debugText)
         }
 
         ImmersiveSpace(id: "ImmersiveSpace") {
-            ImmersiveView()
+            ImmersiveView(debugText: $debugText)
                 .environment(viewModel)
         }
     }

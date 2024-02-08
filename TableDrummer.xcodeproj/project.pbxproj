@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		172F19972B754E67001F9B12 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F19962B754E67001F9B12 /* DebugView.swift */; };
 		174C08412B74BD1700AAC4FE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C08402B74BD1700AAC4FE /* ViewModel.swift */; };
 		174C08432B74BD6200AAC4FE /* DrumPads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C08422B74BD6200AAC4FE /* DrumPads.swift */; };
 		174CC91F2B7432F0009B0C36 /* TableDrummerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174CC91E2B7432F0009B0C36 /* TableDrummerApp.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		172F19962B754E67001F9B12 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		174C083E2B74A7AE00AAC4FE /* Scene.usda */ = {isa = PBXFileReference; lastKnownFileType = text; name = Scene.usda; path = "../../../Pictures/Reality Composer Scenes/primitives/Sources/primitives/primitives.rkassets/Scene.usda"; sourceTree = "<group>"; };
 		174C08402B74BD1700AAC4FE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		174C08422B74BD6200AAC4FE /* DrumPads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumPads.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				174CC9262B7432F2009B0C36 /* Preview Content */,
 				174C08402B74BD1700AAC4FE /* ViewModel.swift */,
 				174C08422B74BD6200AAC4FE /* DrumPads.swift */,
+				172F19962B754E67001F9B12 /* DebugView.swift */,
 			);
 			path = TableDrummer;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				172F19972B754E67001F9B12 /* DebugView.swift in Sources */,
 				174CC9212B7432F0009B0C36 /* ContentView.swift in Sources */,
 				174CC91F2B7432F0009B0C36 /* TableDrummerApp.swift in Sources */,
 				174C08432B74BD6200AAC4FE /* DrumPads.swift in Sources */,
@@ -306,7 +310,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.samhodak.TableDrummer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
@@ -332,7 +336,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.samhodak.TableDrummer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
