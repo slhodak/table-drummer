@@ -7,42 +7,43 @@
 
 import SwiftUI
 import RealityKit
+import TableDrummerContent
+
 
 struct ImmersiveView: View {
     @Environment(ViewModel.self) private var viewModel
     @State var tapCount: Int = 0
-    
+    var drumPadCount = 4
     @Binding var debugText: String
-//    @State var planeEntity: Entity = {
-//        let tableAnchor = AnchorEntity(.plane(.horizontal, classification: .table, minimumBounds: SIMD2<Float>(0.1, 0.1)))
-//        let drumPads = DrumPads.createPads(numPads: 4, addTo: tableAnchor)
-//        return tableAnchor
-//    }()
-    @State private var sphereEntity: ModelEntity?
+    @State var planeEntity: Entity = {
+        let tableAnchor = AnchorEntity(.plane(.horizontal, classification: .table, minimumBounds: SIMD2<Float>(0.1, 0.1)))
+        return tableAnchor
+    }()
+    
+    // touch table to place midpoint of pads
+    // touch table to set pad midpoint in X & Z
+    // set y from detected table plane
     
     var body: some View {
         RealityView { content in
-            let drumPads = DrumPads.createPads(numPads: 4)
-            for pad in drumPads {
+            let spacing: Float = 0.25
+            for i in 0..<drumPadCount {
+                // Only add pad and drum if both can be made
+                guard let pad = DrumPad.create(index: i),
+                      let emitter = SoundEmitter.create() else { continue }
+                
+                // Todo: connect the pad to the emitter
+                
+                pad.position = [0.0  + (spacing * Float(i)), 1.0, 0.0]
                 content.add(pad)
-            }
-            
-            sphereEntity = ModelEntity(
-                mesh: MeshResource.generateSphere(radius: 0.1),
-                materials: [SimpleMaterial(color: .green, isMetallic: false)]
-            )
-            if let sphereEntity = sphereEntity {
-                sphereEntity.position = [0, 1, -1]
-                content.add(sphereEntity)
+                emitter.position = [0.0  + (spacing * Float(i)), 1.4, 0.0]
+                content.add(emitter)
             }
         }
         .gesture(SpatialTapGesture().targetedToAnyEntity().onEnded {
             gesture in
             tapCount += 1
             debugText = "taps: \(tapCount)"
-            if let sphereEntity = sphereEntity {
-                sphereEntity.model?.materials = [SimpleMaterial(color: .yellow, isMetallic: false)]
-            }
             viewModel.tapDrum(gesture: gesture)
         })
     }

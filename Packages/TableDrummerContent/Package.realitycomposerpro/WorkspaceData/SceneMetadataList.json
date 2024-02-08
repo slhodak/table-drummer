@@ -1,0 +1,146 @@
+{
+  "0F25DC74-3213-4619-987E-5BB60C41DE99" : {
+    "objectMetadataList" : [
+      [
+        "0F25DC74-3213-4619-987E-5BB60C41DE99",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "489D1B89-E770-45DA-A24D-01EAB8ED2C4C" : {
+    "objectMetadataList" : [
+      [
+        "489D1B89-E770-45DA-A24D-01EAB8ED2C4C",
+        "Cube"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "489D1B89-E770-45DA-A24D-01EAB8ED2C4C",
+        "Cube",
+        "Mesh"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false,
+        "selectedAudioFilePrim" : {
+          "string" : "\/Cube\/rock_kick_140bpm_C_wav"
+        }
+      }
+    ]
+  },
+  "952DE5C6-ECA4-4625-88DE-92E76235C1E8" : {
+    "objectMetadataList" : [
+
+    ]
+  },
+  "5865D184-195C-473C-8B1C-BE333EE68E3D" : {
+    "objectMetadataList" : [
+      [
+        "5865D184-195C-473C-8B1C-BE333EE68E3D",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "5865D184-195C-473C-8B1C-BE333EE68E3D",
+        "Root",
+        "Cylinder"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "35631DC9-6E99-4864-8321-6C308624167D" : {
+    "objectMetadataList" : [
+      [
+        "35631DC9-6E99-4864-8321-6C308624167D",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "35631DC9-6E99-4864-8321-6C308624167D",
+        "Root",
+        "Cylinder"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "61292A3B-5E6B-45E9-9417-90EC3159230C" : {
+    "objectMetadataList" : [
+      [
+        "61292A3B-5E6B-45E9-9417-90EC3159230C",
+        "Sphere"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "61292A3B-5E6B-45E9-9417-90EC3159230C",
+        "Sphere",
+        "Sphere_002",
+        "Material"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "61292A3B-5E6B-45E9-9417-90EC3159230C",
+        "Sphere",
+        "Sphere_002"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "D00E7E6A-910B-42C0-AF1A-4D79B33833D1" : {
+    "objectMetadataList" : [
+      [
+        "D00E7E6A-910B-42C0-AF1A-4D79B33833D1",
+        "Transform",
+        "Cylinder"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "D00E7E6A-910B-42C0-AF1A-4D79B33833D1",
+        "Cylinder",
+        "DrumSurface"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "D00E7E6A-910B-42C0-AF1A-4D79B33833D1",
+        "Transform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  }
+}

@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		172F19972B754E67001F9B12 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F19962B754E67001F9B12 /* DebugView.swift */; };
+		172F19A02B755C0D001F9B12 /* TableDrummerContent in Frameworks */ = {isa = PBXBuildFile; productRef = 172F199F2B755C0D001F9B12 /* TableDrummerContent */; };
+		172F1A182B7593AD001F9B12 /* SoundEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F1A172B7593AD001F9B12 /* SoundEmitter.swift */; };
 		174C08412B74BD1700AAC4FE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C08402B74BD1700AAC4FE /* ViewModel.swift */; };
-		174C08432B74BD6200AAC4FE /* DrumPads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C08422B74BD6200AAC4FE /* DrumPads.swift */; };
+		174C08432B74BD6200AAC4FE /* DrumPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C08422B74BD6200AAC4FE /* DrumPad.swift */; };
 		174CC91F2B7432F0009B0C36 /* TableDrummerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174CC91E2B7432F0009B0C36 /* TableDrummerApp.swift */; };
 		174CC9212B7432F0009B0C36 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174CC9202B7432F0009B0C36 /* ContentView.swift */; };
 		174CC9232B7432F0009B0C36 /* ImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174CC9222B7432F0009B0C36 /* ImmersiveView.swift */; };
@@ -19,9 +21,11 @@
 
 /* Begin PBXFileReference section */
 		172F19962B754E67001F9B12 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
-		174C083E2B74A7AE00AAC4FE /* Scene.usda */ = {isa = PBXFileReference; lastKnownFileType = text; name = Scene.usda; path = "../../../Pictures/Reality Composer Scenes/primitives/Sources/primitives/primitives.rkassets/Scene.usda"; sourceTree = "<group>"; };
+		172F199C2B755BEE001F9B12 /* TableDrummerContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TableDrummerContent; sourceTree = "<group>"; };
+		172F1A152B758D22001F9B12 /* AudioSamples */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AudioSamples; path = Packages/AudioSamples; sourceTree = "<group>"; };
+		172F1A172B7593AD001F9B12 /* SoundEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEmitter.swift; sourceTree = "<group>"; };
 		174C08402B74BD1700AAC4FE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		174C08422B74BD6200AAC4FE /* DrumPads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumPads.swift; sourceTree = "<group>"; };
+		174C08422B74BD6200AAC4FE /* DrumPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumPad.swift; sourceTree = "<group>"; };
 		174CC9172B7432F0009B0C36 /* TableDrummer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableDrummer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		174CC91E2B7432F0009B0C36 /* TableDrummerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDrummerApp.swift; sourceTree = "<group>"; };
 		174CC9202B7432F0009B0C36 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,16 +40,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				172F19A02B755C0D001F9B12 /* TableDrummerContent in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		174C083B2B74644A00AAC4FE /* Frameworks */ = {
+		172F199B2B755BEE001F9B12 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				174C083E2B74A7AE00AAC4FE /* Scene.usda */,
+				172F199C2B755BEE001F9B12 /* TableDrummerContent */,
+			);
+			path = Packages;
+			sourceTree = SOURCE_ROOT;
+		};
+		172F199E2B755C0D001F9B12 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -53,9 +65,11 @@
 		174CC90E2B7432F0009B0C36 = {
 			isa = PBXGroup;
 			children = (
+				172F1A152B758D22001F9B12 /* AudioSamples */,
 				174CC9192B7432F0009B0C36 /* TableDrummer */,
+				172F199B2B755BEE001F9B12 /* Packages */,
 				174CC9182B7432F0009B0C36 /* Products */,
-				174C083B2B74644A00AAC4FE /* Frameworks */,
+				172F199E2B755C0D001F9B12 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,7 +91,8 @@
 				174CC9292B7432F2009B0C36 /* Info.plist */,
 				174CC9262B7432F2009B0C36 /* Preview Content */,
 				174C08402B74BD1700AAC4FE /* ViewModel.swift */,
-				174C08422B74BD6200AAC4FE /* DrumPads.swift */,
+				174C08422B74BD6200AAC4FE /* DrumPad.swift */,
+				172F1A172B7593AD001F9B12 /* SoundEmitter.swift */,
 				172F19962B754E67001F9B12 /* DebugView.swift */,
 			);
 			path = TableDrummer;
@@ -108,6 +123,7 @@
 			);
 			name = TableDrummer;
 			packageProductDependencies = (
+				172F199F2B755C0D001F9B12 /* TableDrummerContent */,
 			);
 			productName = TableDrummer;
 			productReference = 174CC9172B7432F0009B0C36 /* TableDrummer.app */;
@@ -166,8 +182,9 @@
 				172F19972B754E67001F9B12 /* DebugView.swift in Sources */,
 				174CC9212B7432F0009B0C36 /* ContentView.swift in Sources */,
 				174CC91F2B7432F0009B0C36 /* TableDrummerApp.swift in Sources */,
-				174C08432B74BD6200AAC4FE /* DrumPads.swift in Sources */,
+				174C08432B74BD6200AAC4FE /* DrumPad.swift in Sources */,
 				174C08412B74BD1700AAC4FE /* ViewModel.swift in Sources */,
+				172F1A182B7593AD001F9B12 /* SoundEmitter.swift in Sources */,
 				174CC9232B7432F0009B0C36 /* ImmersiveView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +385,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		172F199F2B755C0D001F9B12 /* TableDrummerContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TableDrummerContent;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 174CC90F2B7432F0009B0C36 /* Project object */;
 }
