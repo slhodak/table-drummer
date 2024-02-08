@@ -20,9 +20,11 @@ struct ImmersiveView: View {
         return tableAnchor
     }()
     
-    // touch table to place midpoint of pads
-    // touch table to set pad midpoint in X & Z
-    // set y from detected table plane
+    // pads appear in front of you
+    // you can position them as a group and individually on top of the table
+    // pad has an area that allows for moving it (but not rotating it)
+    // can disable all handles
+    // app encourages you to adjust height to combat latency -- a fine Y adjustment slider
     
     var body: some View {
         RealityView { content in

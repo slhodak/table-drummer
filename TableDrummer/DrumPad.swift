@@ -9,11 +9,11 @@ import Foundation
 import RealityKit
 import TableDrummerContent
 
-    
+
 class DrumPad {
     static func create(index: Int) -> Entity? {
         do {
-            let padEntity = try Entity.load(named: "simple-pad", in: tableDrummerContentBundle)
+            let padEntity = try Entity.load(named: "simple-pad-2", in: tableDrummerContentBundle)
             padEntity.scale = [0.06, 0.06, 0.06]
             padEntity.name = "drum_pad_\(index)"
             

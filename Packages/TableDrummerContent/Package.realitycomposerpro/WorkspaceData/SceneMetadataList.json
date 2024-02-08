@@ -11,6 +11,83 @@
       }
     ]
   },
+  "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2" : {
+    "objectMetadataList" : [
+      [
+        "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
+        "root",
+        "PadTransform",
+        "GripTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
+        "root",
+        "GripMaterial"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
+        "PadTransform",
+        "GripTransform",
+        "GripMesh"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
+        "root",
+        "PadMaterial"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
+        "root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
+        "Cube",
+        "Cylinder"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
+        "PadTransform",
+        "GripTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
+        "root",
+        "PadTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
   "489D1B89-E770-45DA-A24D-01EAB8ED2C4C" : {
     "objectMetadataList" : [
       [
