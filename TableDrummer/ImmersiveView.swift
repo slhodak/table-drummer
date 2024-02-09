@@ -17,6 +17,7 @@ struct ImmersiveView: View {
     @Binding var debugText: String
     var cannotDragElements: Bool
     
+    let colors: [RealityFoundation.Material.Color] = [.blue, .red, .green, .yellow]
     let audioSamples: [String] = [
         "rock-kick-2",
         "indie-rock-snare",
@@ -41,6 +42,18 @@ struct ImmersiveView: View {
                       let emitter = SoundEmitter(for: sampleName) else { continue }
                 
                 // Link the pad to the emitter
+                let color = colors[i]
+                let padCornersMesh = pad.findEntity(named: "PadCornersMesh")
+                let emitterStripesMesh = pad.findEntity(named: "EmitterStripesMesh")
+                
+                padCornersMesh?.components[ModelComponent.self]?.materials = [SimpleMaterial(color: color, roughness: 0.8, isMetallic: false)]
+                
+                emitterStripesMesh?.components[ModelComponent.self]?.materials = [SimpleMaterial(color: color, roughness: 0.8, isMetallic: false)]
+                
+                
+//                print(modelComponent)
+//                print(modelComponent?.materials)
+//                print(modelComponent?.materials[0])
                 let padIdentifier = sampleName
                 let padIdTransform = pad.findEntity(named: "MutableId")
                 padIdTransform?.name = padIdentifier
