@@ -33,6 +33,8 @@ struct ImmersiveView: View {
         RealityView { content in
             let spacing: Float = 0.22
             var i = 0
+            let allPadsInitialWidth = spacing * Float(audioSamples.count - 1)
+            
             for sampleName in audioSamples {
                 // Only add pad and emitter if both can be made
                 guard let pad = DrumPad.create(for: sampleName),
@@ -47,8 +49,8 @@ struct ImmersiveView: View {
                 let emitterIdTransform = emitter.entity?.findEntity(named: "MutableId")
                 emitterIdTransform?.name = padIdentifier // not used on this entity for now
                 
-                pad.position = [0.0 + (spacing * Float(i)), 1, -1.0]
-                emitter.entity?.position = [0.0 + (spacing * Float(i)), 1.2, -1.0]
+                pad.position = [(allPadsInitialWidth/2 * -1) + (spacing * Float(i)), 1, -1.0]
+                emitter.entity?.position = [pad.position[0], pad.position[1] + 0.1, pad.position[2]]
                 
                 content.add(pad)
                 content.add(emitter.entity!)
@@ -73,7 +75,16 @@ struct ImmersiveView: View {
                     return
                 }
                 
-                emitter.audioPlaybackController?.play()
+                guard let audioPlaybackController = emitter.audioPlaybackController else {
+                    print("No audio playback controller on emitter \(padIdentifier)")
+                    return
+                }
+                
+                if audioPlaybackController.isPlaying {
+                    audioPlaybackController.stop()
+                }
+                
+                audioPlaybackController.play()
             })
         .gesture(DragGesture()
             .targetedToAnyEntity()

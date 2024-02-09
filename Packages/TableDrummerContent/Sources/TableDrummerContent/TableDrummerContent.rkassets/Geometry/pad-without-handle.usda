@@ -144,5 +144,10 @@ def Xform "PadTransform"
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
     }
+
+    def RealityKitComponent "GroundingShadow"
+    {
+        uniform token info:id = "RealityKit.GroundingShadow"
+    }
 }
 
