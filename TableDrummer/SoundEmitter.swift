@@ -19,7 +19,7 @@ class SoundEmitter {
             let emitterEntity = try Entity.load(named: "Geometry/striped-emitter", in: tableDrummerContentBundle)
             let resource = try AudioFileResource.load(named: audioFileName)
             
-            emitterEntity.scale = [0.1, 0.1, 0.1]
+            emitterEntity.scale = [0.05, 0.05, 0.05]
             emitterEntity.name = "\(audioFileName)_emitter"
             
             self.entity = emitterEntity

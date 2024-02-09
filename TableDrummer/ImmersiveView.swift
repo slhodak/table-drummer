@@ -41,35 +41,17 @@ struct ImmersiveView: View {
                 guard let pad = DrumPad.create(for: sampleName),
                       let emitter = SoundEmitter(for: sampleName) else { continue }
                 
-                // Link the pad to the emitter
-                let color = colors[i]
-                let padCornersMesh = pad.findEntity(named: "PadCornersMesh")
-                let emitterStripesMesh = pad.findEntity(named: "EmitterStripesMesh")
-                
-                padCornersMesh?.components[ModelComponent.self]?.materials = [SimpleMaterial(color: color, roughness: 0.8, isMetallic: false)]
-                
-                emitterStripesMesh?.components[ModelComponent.self]?.materials = [SimpleMaterial(color: color, roughness: 0.8, isMetallic: false)]
-                
-                
-//                print(modelComponent)
-//                print(modelComponent?.materials)
-//                print(modelComponent?.materials[0])
-                let padIdentifier = sampleName
-                let padIdTransform = pad.findEntity(named: "MutableId")
-                padIdTransform?.name = padIdentifier
-                
-                emitters[padIdentifier] = emitter
-                let emitterIdTransform = emitter.entity?.findEntity(named: "MutableId")
-                emitterIdTransform?.name = padIdentifier // not used on this entity for now
+//                linkPadToEmitter(pad: pad, emitter: emitter, identifier: sampleName)
                 
                 pad.position = [(allPadsInitialWidth/2 * -1) + (spacing * Float(i)), 1, -1.0]
-                emitter.entity?.position = [pad.position[0], pad.position[1] + 0.1, pad.position[2]]
+                emitter.entity?.position = [pad.position[0], pad.position[1] + 0.25, pad.position[2]]
                 
                 content.add(pad)
                 content.add(emitter.entity!)
                 pads.append(pad)
                 i += 1
             }
+            
         }
         .gesture(SpatialTapGesture()
             .targetedToAnyEntity()
@@ -107,6 +89,16 @@ struct ImmersiveView: View {
                 value.entity.position = value.convert(value.location3D,
                                                       from: .local, to: value.entity.parent!)
             })
+    }
+    
+    private func linkPadToEmitter(pad: Entity, emitter: SoundEmitter, identifier: String) {
+        let padIdentifier = identifier
+        let padIdTransform = pad.findEntity(named: "MutableId")
+        padIdTransform?.name = padIdentifier
+        
+        emitters[padIdentifier] = emitter
+        let emitterIdTransform = emitter.entity?.findEntity(named: "MutableId")
+        emitterIdTransform?.name = padIdentifier // not used on this entity for now
     }
     
     private func addTestSphere(to content: RealityViewContent) {
