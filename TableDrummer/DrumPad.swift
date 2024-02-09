@@ -11,18 +11,21 @@ import TableDrummerContent
 
 
 class DrumPad {
-    static func create(index: Int) -> Entity? {
+    static func create(for audioFileName: String) -> Entity? {
         do {
-            let padEntity = try Entity.load(named: "simple-pad-2", in: tableDrummerContentBundle)
-            padEntity.scale = [0.06, 0.06, 0.06]
-            padEntity.name = "drum_pad_\(index)"
+            let padEntity = try Entity.load(named: "Geometry/grippable-pad", in: tableDrummerContentBundle)
+            padEntity.scale = [0.1, 0.1, 0.1]
+            padEntity.name = "\(audioFileName)_pad"
+            padEntity.components.set(IdentifierComponent())
+            padEntity.components[IdentifierComponent.self]?.sharedId = audioFileName
+            print(padEntity.components)
             
             return padEntity
+            
         } catch {
-            print("Could not load pad \(index)")
+            print("Could not load pad \(audioFileName)")
             print(error.localizedDescription)
+            return nil
         }
-        
-        return nil
     }
 }

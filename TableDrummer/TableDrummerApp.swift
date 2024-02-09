@@ -6,20 +6,26 @@
 //
 
 import SwiftUI
+import TableDrummerContent
+
 
 @main
 struct TableDrummerApp: App {
-    @State private var viewModel = ViewModel()
     @State var debugText = ""
+    @State private var cannotDragElements: Bool = false
+    
+    init() {
+        print("Initializing App")
+        IdentifierComponent.registerComponent()
+    }
     
     var body: some Scene {
         WindowGroup {
-            ContentView(debugText: debugText)
+            ContentView(debugText: debugText, cannotDragElements: $cannotDragElements)
         }
-
+        
         ImmersiveSpace(id: "ImmersiveSpace") {
-            ImmersiveView(debugText: $debugText)
-                .environment(viewModel)
+            ImmersiveView(debugText: $debugText, cannotDragElements: cannotDragElements)
         }
     }
 }

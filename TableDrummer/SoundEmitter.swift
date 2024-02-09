@@ -9,18 +9,30 @@ import Foundation
 import RealityKit
 import TableDrummerContent
 
+
 class SoundEmitter {
+    var entity: Entity?
+    var audioPlaybackController: AudioPlaybackController?
     
-    static func create() -> Entity? {
+    init?(for audioFileName: String) {
         do {
-            let emitterEntity = try Entity.load(named: "sound-emitter-2", in: tableDrummerContentBundle)
+            let emitterEntity = try Entity.load(named: "Geometry/sound-emitter", in: tableDrummerContentBundle)
+            let resource = try AudioFileResource.load(named: audioFileName)
+            
             emitterEntity.scale = [0.1, 0.1, 0.1]
-            return emitterEntity
+            emitterEntity.name = "\(audioFileName)_emitter"
+            
+            // It may be redundant to call .set() and add the component in Composer, but it's not working without this
+            emitterEntity.components.set(IdentifierComponent())
+            emitterEntity.components[IdentifierComponent.self]?.sharedId = audioFileName
+            emitterEntity.spatialAudio = SpatialAudioComponent()
+            
+            self.entity = emitterEntity
+            self.audioPlaybackController = emitterEntity.prepareAudio(resource)
         } catch {
-            print("Error loading sound emitter entity")
+            print("Error initializing sound emitter entity \(audioFileName)")
             print(error.localizedDescription)
+            return nil
         }
-        
-        return nil
     }
 }

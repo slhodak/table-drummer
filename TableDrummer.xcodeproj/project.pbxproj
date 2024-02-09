@@ -10,21 +10,27 @@
 		172F19972B754E67001F9B12 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F19962B754E67001F9B12 /* DebugView.swift */; };
 		172F19A02B755C0D001F9B12 /* TableDrummerContent in Frameworks */ = {isa = PBXBuildFile; productRef = 172F199F2B755C0D001F9B12 /* TableDrummerContent */; };
 		172F1A182B7593AD001F9B12 /* SoundEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F1A172B7593AD001F9B12 /* SoundEmitter.swift */; };
-		174C08412B74BD1700AAC4FE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C08402B74BD1700AAC4FE /* ViewModel.swift */; };
 		174C08432B74BD6200AAC4FE /* DrumPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C08422B74BD6200AAC4FE /* DrumPad.swift */; };
 		174CC91F2B7432F0009B0C36 /* TableDrummerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174CC91E2B7432F0009B0C36 /* TableDrummerApp.swift */; };
 		174CC9212B7432F0009B0C36 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174CC9202B7432F0009B0C36 /* ContentView.swift */; };
 		174CC9232B7432F0009B0C36 /* ImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174CC9222B7432F0009B0C36 /* ImmersiveView.swift */; };
 		174CC9252B7432F2009B0C36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 174CC9242B7432F2009B0C36 /* Assets.xcassets */; };
 		174CC9282B7432F2009B0C36 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 174CC9272B7432F2009B0C36 /* Preview Assets.xcassets */; };
+		1756B4A12B75D74400729672 /* rock-kick-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1756B4942B75D71D00729672 /* rock-kick-2.wav */; };
+		1756B4A22B75D74800729672 /* rock-kick_140bpm_C.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1756B4952B75D71D00729672 /* rock-kick_140bpm_C.wav */; };
+		1756B4A32B75D74C00729672 /* heavy-rock-tom.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1756B4972B75D71D00729672 /* heavy-rock-tom.wav */; };
+		1756B4A42B75D75400729672 /* heavy-rock-tom-3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1756B49A2B75D71D00729672 /* heavy-rock-tom-3.wav */; };
+		1756B4A52B75D75600729672 /* heavy-rock-tom-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1756B4992B75D71D00729672 /* heavy-rock-tom-2.wav */; };
+		1756B4A62B75D75900729672 /* heavy-rock-floor-tom.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1756B4982B75D71D00729672 /* heavy-rock-floor-tom.wav */; };
+		1756B4A72B75D75B00729672 /* punchy-acoustic-rock-snare-one-shot_F_major.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1756B49C2B75D71D00729672 /* punchy-acoustic-rock-snare-one-shot_F_major.wav */; };
+		1756B4A82B75D75D00729672 /* indie-rock-snare.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1756B49D2B75D71D00729672 /* indie-rock-snare.wav */; };
+		1756B4A92B75D76000729672 /* heavy-rock-closed-hi-hat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1756B4A02B75D71D00729672 /* heavy-rock-closed-hi-hat.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		172F19962B754E67001F9B12 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		172F199C2B755BEE001F9B12 /* TableDrummerContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TableDrummerContent; sourceTree = "<group>"; };
-		172F1A152B758D22001F9B12 /* AudioSamples */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AudioSamples; path = Packages/AudioSamples; sourceTree = "<group>"; };
 		172F1A172B7593AD001F9B12 /* SoundEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEmitter.swift; sourceTree = "<group>"; };
-		174C08402B74BD1700AAC4FE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		174C08422B74BD6200AAC4FE /* DrumPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumPad.swift; sourceTree = "<group>"; };
 		174CC9172B7432F0009B0C36 /* TableDrummer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableDrummer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		174CC91E2B7432F0009B0C36 /* TableDrummerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDrummerApp.swift; sourceTree = "<group>"; };
@@ -33,6 +39,15 @@
 		174CC9242B7432F2009B0C36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		174CC9272B7432F2009B0C36 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		174CC9292B7432F2009B0C36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1756B4942B75D71D00729672 /* rock-kick-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "rock-kick-2.wav"; sourceTree = "<group>"; };
+		1756B4952B75D71D00729672 /* rock-kick_140bpm_C.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "rock-kick_140bpm_C.wav"; sourceTree = "<group>"; };
+		1756B4972B75D71D00729672 /* heavy-rock-tom.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "heavy-rock-tom.wav"; sourceTree = "<group>"; };
+		1756B4982B75D71D00729672 /* heavy-rock-floor-tom.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "heavy-rock-floor-tom.wav"; sourceTree = "<group>"; };
+		1756B4992B75D71D00729672 /* heavy-rock-tom-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "heavy-rock-tom-2.wav"; sourceTree = "<group>"; };
+		1756B49A2B75D71D00729672 /* heavy-rock-tom-3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "heavy-rock-tom-3.wav"; sourceTree = "<group>"; };
+		1756B49C2B75D71D00729672 /* punchy-acoustic-rock-snare-one-shot_F_major.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "punchy-acoustic-rock-snare-one-shot_F_major.wav"; sourceTree = "<group>"; };
+		1756B49D2B75D71D00729672 /* indie-rock-snare.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "indie-rock-snare.wav"; sourceTree = "<group>"; };
+		1756B4A02B75D71D00729672 /* heavy-rock-closed-hi-hat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "heavy-rock-closed-hi-hat.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +80,7 @@
 		174CC90E2B7432F0009B0C36 = {
 			isa = PBXGroup;
 			children = (
-				172F1A152B758D22001F9B12 /* AudioSamples */,
+				1756B48F2B75D6DC00729672 /* Audio */,
 				174CC9192B7432F0009B0C36 /* TableDrummer */,
 				172F199B2B755BEE001F9B12 /* Packages */,
 				174CC9182B7432F0009B0C36 /* Products */,
@@ -90,7 +105,6 @@
 				174CC9242B7432F2009B0C36 /* Assets.xcassets */,
 				174CC9292B7432F2009B0C36 /* Info.plist */,
 				174CC9262B7432F2009B0C36 /* Preview Content */,
-				174C08402B74BD1700AAC4FE /* ViewModel.swift */,
 				174C08422B74BD6200AAC4FE /* DrumPad.swift */,
 				172F1A172B7593AD001F9B12 /* SoundEmitter.swift */,
 				172F19962B754E67001F9B12 /* DebugView.swift */,
@@ -104,6 +118,62 @@
 				174CC9272B7432F2009B0C36 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1756B48F2B75D6DC00729672 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				1756B4922B75D71D00729672 /* Samples */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		1756B4922B75D71D00729672 /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				1756B4932B75D71D00729672 /* Kick */,
+				1756B4962B75D71D00729672 /* Tom */,
+				1756B49B2B75D71D00729672 /* Snare */,
+				1756B49F2B75D71D00729672 /* Hat */,
+			);
+			path = Samples;
+			sourceTree = "<group>";
+		};
+		1756B4932B75D71D00729672 /* Kick */ = {
+			isa = PBXGroup;
+			children = (
+				1756B4942B75D71D00729672 /* rock-kick-2.wav */,
+				1756B4952B75D71D00729672 /* rock-kick_140bpm_C.wav */,
+			);
+			path = Kick;
+			sourceTree = "<group>";
+		};
+		1756B4962B75D71D00729672 /* Tom */ = {
+			isa = PBXGroup;
+			children = (
+				1756B4972B75D71D00729672 /* heavy-rock-tom.wav */,
+				1756B4982B75D71D00729672 /* heavy-rock-floor-tom.wav */,
+				1756B4992B75D71D00729672 /* heavy-rock-tom-2.wav */,
+				1756B49A2B75D71D00729672 /* heavy-rock-tom-3.wav */,
+			);
+			path = Tom;
+			sourceTree = "<group>";
+		};
+		1756B49B2B75D71D00729672 /* Snare */ = {
+			isa = PBXGroup;
+			children = (
+				1756B49C2B75D71D00729672 /* punchy-acoustic-rock-snare-one-shot_F_major.wav */,
+				1756B49D2B75D71D00729672 /* indie-rock-snare.wav */,
+			);
+			path = Snare;
+			sourceTree = "<group>";
+		};
+		1756B49F2B75D71D00729672 /* Hat */ = {
+			isa = PBXGroup;
+			children = (
+				1756B4A02B75D71D00729672 /* heavy-rock-closed-hi-hat.wav */,
+			);
+			path = Hat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +239,15 @@
 			files = (
 				174CC9282B7432F2009B0C36 /* Preview Assets.xcassets in Resources */,
 				174CC9252B7432F2009B0C36 /* Assets.xcassets in Resources */,
+				1756B4A12B75D74400729672 /* rock-kick-2.wav in Resources */,
+				1756B4A22B75D74800729672 /* rock-kick_140bpm_C.wav in Resources */,
+				1756B4A32B75D74C00729672 /* heavy-rock-tom.wav in Resources */,
+				1756B4A52B75D75600729672 /* heavy-rock-tom-2.wav in Resources */,
+				1756B4A42B75D75400729672 /* heavy-rock-tom-3.wav in Resources */,
+				1756B4A62B75D75900729672 /* heavy-rock-floor-tom.wav in Resources */,
+				1756B4A72B75D75B00729672 /* punchy-acoustic-rock-snare-one-shot_F_major.wav in Resources */,
+				1756B4A82B75D75D00729672 /* indie-rock-snare.wav in Resources */,
+				1756B4A92B75D76000729672 /* heavy-rock-closed-hi-hat.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,7 +262,6 @@
 				174CC9212B7432F0009B0C36 /* ContentView.swift in Sources */,
 				174CC91F2B7432F0009B0C36 /* TableDrummerApp.swift in Sources */,
 				174C08432B74BD6200AAC4FE /* DrumPad.swift in Sources */,
-				174C08412B74BD1700AAC4FE /* ViewModel.swift in Sources */,
 				172F1A182B7593AD001F9B12 /* SoundEmitter.swift in Sources */,
 				174CC9232B7432F0009B0C36 /* ImmersiveView.swift in Sources */,
 			);

@@ -1,12 +1,18 @@
 {
   "pathsToIds" : {
     "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/DrumPad.usda" : "D00E7E6A-910B-42C0-AF1A-4D79B33833D1",
+    "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/Geometry\/grippable-pad.usda" : "A9A8E935-937A-4D77-86AD-6733C87EB7C7",
+    "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/Geometry\/sound-emitter.usda" : "03ECABB0-33A3-4A1E-BA15-66AB19526D51",
+    "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/grippable-pad.usda" : "014ABE0A-0CA5-401E-8BA0-CF86EC65E5F9",
+    "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/grippable-pad.usdc" : "973F8552-AC22-474D-AB50-884B159E0583",
     "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/Immersive.usda" : "35631DC9-6E99-4864-8321-6C308624167D",
     "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/Pad.usda" : "5865D184-195C-473C-8B1C-BE333EE68E3D",
     "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/Scene.usda" : "0F25DC74-3213-4619-987E-5BB60C41DE99",
     "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/simple-pad-2.usdc" : "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
     "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/simple-pad.usda" : "489D1B89-E770-45DA-A24D-01EAB8ED2C4C",
     "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/sound-emitter-2.usda" : "61292A3B-5E6B-45E9-9417-90EC3159230C",
+    "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/sound-emitter-3.usda" : "4641E9AC-36DF-4B18-985D-F40BB79694B0",
+    "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/sound-emitter.usda" : "D32D3870-E36C-419B-A540-6FE3FAC4AF97",
     "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/Untitled Scene.usda" : "0E1390B9-38F7-410E-933D-3BA4BB464223",
     "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/Untitled%20Scene.usda" : "952DE5C6-ECA4-4625-88DE-92E76235C1E8"
   }

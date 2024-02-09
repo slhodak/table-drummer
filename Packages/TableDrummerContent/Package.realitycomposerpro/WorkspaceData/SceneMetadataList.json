@@ -11,46 +11,32 @@
       }
     ]
   },
-  "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2" : {
+  "03ECABB0-33A3-4A1E-BA15-66AB19526D51" : {
     "objectMetadataList" : [
       [
-        "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
-        "root",
-        "PadTransform",
+        "03ECABB0-33A3-4A1E-BA15-66AB19526D51",
+        "EmitterTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "014ABE0A-0CA5-401E-8BA0-CF86EC65E5F9" : {
+    "objectMetadataList" : [
+      [
+        "014ABE0A-0CA5-401E-8BA0-CF86EC65E5F9",
         "GripTransform"
       ],
       {
         "isExpanded" : true,
         "isLocked" : false
-      },
-      [
-        "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
-        "root",
-        "GripMaterial"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
-        "PadTransform",
-        "GripTransform",
-        "GripMesh"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
-        "root",
-        "PadMaterial"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
+      }
+    ]
+  },
+  "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2" : {
+    "objectMetadataList" : [
       [
         "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
         "root"
@@ -70,6 +56,24 @@
       },
       [
         "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
+        "root",
+        "PadTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
+        "root",
+        "PadMaterial"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
         "PadTransform",
         "GripTransform"
       ],
@@ -80,7 +84,27 @@
       [
         "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
         "root",
-        "PadTransform"
+        "PadTransform",
+        "GripTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
+        "PadTransform",
+        "GripTransform",
+        "GripMesh"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
+        "root",
+        "GripMaterial"
       ],
       {
         "isExpanded" : true,
@@ -92,7 +116,42 @@
     "objectMetadataList" : [
       [
         "489D1B89-E770-45DA-A24D-01EAB8ED2C4C",
+        "GripTransform",
+        "PadTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "489D1B89-E770-45DA-A24D-01EAB8ED2C4C",
+        "GripTransform",
+        "GripMaterial"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "489D1B89-E770-45DA-A24D-01EAB8ED2C4C",
+        "Grip",
+        "Pad"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "489D1B89-E770-45DA-A24D-01EAB8ED2C4C",
         "Cube"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "489D1B89-E770-45DA-A24D-01EAB8ED2C4C",
+        "GripTransform"
       ],
       {
         "isExpanded" : true,
@@ -109,6 +168,15 @@
         "selectedAudioFilePrim" : {
           "string" : "\/Cube\/rock_kick_140bpm_C_wav"
         }
+      },
+      [
+        "489D1B89-E770-45DA-A24D-01EAB8ED2C4C",
+        "GripTransform",
+        "PadMaterial"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
       }
     ]
   },
@@ -117,11 +185,73 @@
 
     ]
   },
+  "973F8552-AC22-474D-AB50-884B159E0583" : {
+    "objectMetadataList" : [
+      [
+        "973F8552-AC22-474D-AB50-884B159E0583",
+        "root",
+        "GripTransform",
+        "PadTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "973F8552-AC22-474D-AB50-884B159E0583",
+        "GripTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "973F8552-AC22-474D-AB50-884B159E0583",
+        "GripTransform",
+        "PadTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "4641E9AC-36DF-4B18-985D-F40BB79694B0" : {
+    "objectMetadataList" : [
+      [
+        "4641E9AC-36DF-4B18-985D-F40BB79694B0",
+        "EmitterTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "4641E9AC-36DF-4B18-985D-F40BB79694B0",
+        "Sphere",
+        "Sphere_002"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "4641E9AC-36DF-4B18-985D-F40BB79694B0",
+        "EmitterTransform",
+        "EmitterMesh"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
   "5865D184-195C-473C-8B1C-BE333EE68E3D" : {
     "objectMetadataList" : [
       [
         "5865D184-195C-473C-8B1C-BE333EE68E3D",
-        "Root"
+        "Root",
+        "Cylinder"
       ],
       {
         "isExpanded" : true,
@@ -129,8 +259,7 @@
       },
       [
         "5865D184-195C-473C-8B1C-BE333EE68E3D",
-        "Root",
-        "Cylinder"
+        "Root"
       ],
       {
         "isExpanded" : true,
@@ -163,7 +292,45 @@
     "objectMetadataList" : [
       [
         "61292A3B-5E6B-45E9-9417-90EC3159230C",
-        "Sphere"
+        "EmitterTransform",
+        "Sphere_002",
+        "Material"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "61292A3B-5E6B-45E9-9417-90EC3159230C",
+        "EmitterTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "61292A3B-5E6B-45E9-9417-90EC3159230C",
+        "Sphere",
+        "Sphere_002"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "61292A3B-5E6B-45E9-9417-90EC3159230C",
+        "EmitterTransform",
+        "EmitterMesh",
+        "EmitterMaterial"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "61292A3B-5E6B-45E9-9417-90EC3159230C",
+        "EmitterTransform",
+        "EmitterMesh"
       ],
       {
         "isExpanded" : true,
@@ -178,11 +345,23 @@
       {
         "isExpanded" : true,
         "isLocked" : false
+      }
+    ]
+  },
+  "A9A8E935-937A-4D77-86AD-6733C87EB7C7" : {
+    "objectMetadataList" : [
+      [
+        "A9A8E935-937A-4D77-86AD-6733C87EB7C7",
+        "GripTransform",
+        "PadTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
       },
       [
-        "61292A3B-5E6B-45E9-9417-90EC3159230C",
-        "Sphere",
-        "Sphere_002"
+        "A9A8E935-937A-4D77-86AD-6733C87EB7C7",
+        "GripTransform"
       ],
       {
         "isExpanded" : true,
@@ -192,15 +371,6 @@
   },
   "D00E7E6A-910B-42C0-AF1A-4D79B33833D1" : {
     "objectMetadataList" : [
-      [
-        "D00E7E6A-910B-42C0-AF1A-4D79B33833D1",
-        "Transform",
-        "Cylinder"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
       [
         "D00E7E6A-910B-42C0-AF1A-4D79B33833D1",
         "Cylinder",
@@ -213,6 +383,44 @@
       [
         "D00E7E6A-910B-42C0-AF1A-4D79B33833D1",
         "Transform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "D00E7E6A-910B-42C0-AF1A-4D79B33833D1",
+        "Transform",
+        "Cylinder"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "D32D3870-E36C-419B-A540-6FE3FAC4AF97" : {
+    "objectMetadataList" : [
+      [
+        "D32D3870-E36C-419B-A540-6FE3FAC4AF97",
+        "Sphere"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "D32D3870-E36C-419B-A540-6FE3FAC4AF97",
+        "EmitterTransform",
+        "EmitterMesh"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "D32D3870-E36C-419B-A540-6FE3FAC4AF97",
+        "EmitterTransform"
       ],
       {
         "isExpanded" : true,
