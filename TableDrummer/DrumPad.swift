@@ -10,15 +10,11 @@ import RealityKit
 import TableDrummerContent
 
 
-class DrumPad {
+class DrumPad: ObservableObject {
     static func create(for audioFileName: String) -> Entity? {
         do {
             let padEntity = try Entity.load(named: "Geometry/pad-without-handle", in: tableDrummerContentBundle)
             padEntity.scale = [0.1, 0.1, 0.1]
-            padEntity.name = "\(audioFileName)_pad"
-            padEntity.components.set(IdentifierComponent())
-            padEntity.components[IdentifierComponent.self]?.sharedId = audioFileName
-            print(padEntity.components)
             
             return padEntity
             

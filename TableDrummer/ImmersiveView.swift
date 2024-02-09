@@ -7,13 +7,16 @@
 
 import SwiftUI
 import RealityKit
+import Combine
 import TableDrummerContent
 
 
 struct ImmersiveView: View {
     @State private var emitters: [String: SoundEmitter] = [:]
+    @State private var pads: [Entity] = []
     @Binding var debugText: String
     var cannotDragElements: Bool
+    
     let audioSamples: [String] = [
         "rock-kick-2",
         "indie-rock-snare",
@@ -24,42 +27,49 @@ struct ImmersiveView: View {
 //        "heavy-rock-tom"
     ]
     
-    // you can position them as a group and individually on top of the table
+    // Todo: Can position all pads as a group
     
     var body: some View {
         RealityView { content in
             let spacing: Float = 0.22
             var i = 0
             for sampleName in audioSamples {
-                // Only add pad and drum if both can be made
+                // Only add pad and emitter if both can be made
                 guard let pad = DrumPad.create(for: sampleName),
                       let emitter = SoundEmitter(for: sampleName) else { continue }
                 
-                // Todo: connect the pad to the emitter
-                guard let sharedId = emitter.entity?.components[IdentifierComponent.self]?.sharedId else { continue }
+                // Link the pad to the emitter
+                let padIdentifier = sampleName
+                let padIdTransform = pad.findEntity(named: "MutableId")
+                padIdTransform?.name = padIdentifier
                 
-                emitters[sharedId] = emitter
+                emitters[padIdentifier] = emitter
+                let emitterIdTransform = emitter.entity?.findEntity(named: "MutableId")
+                emitterIdTransform?.name = padIdentifier // not used on this entity for now
                 
                 pad.position = [0.0 + (spacing * Float(i)), 1, -1.0]
-                content.add(pad)
                 emitter.entity?.position = [0.0 + (spacing * Float(i)), 1.2, -1.0]
-                content.add(emitter.entity!)
-                i += 1
                 
-//                print(emitter.entity?.components[IdentifierComponent.self]?.sharedId)
-//                print(pad.components[IdentifierComponent.self]?.sharedId)
+                content.add(pad)
+                content.add(emitter.entity!)
+                pads.append(pad)
+                i += 1
             }
         }
         .gesture(SpatialTapGesture()
             .targetedToAnyEntity()
             .onEnded { gesture in
-                guard let sharedId = gesture.entity.components[IdentifierComponent.self]?.sharedId else {
-                    print("Error getting sharedId from gesture")
+                print(gesture.entity)
+                
+                let padIdentifierTransform = gesture.entity.findEntity(named: "IdentifierTransform")
+                
+                guard let padIdentifier: String = padIdentifierTransform?.children[0].name else {
+                    print("No identifier found on tapped entity \(gesture.entity.name)")
                     return
                 }
                 
-                guard let emitter = emitters[sharedId] else {
-                    print("Could not find emitter by sharedId \(sharedId)")
+                guard let emitter = emitters[padIdentifier] else {
+                    print("No emitter for identifer \(padIdentifier)")
                     return
                 }
                 
@@ -74,9 +84,22 @@ struct ImmersiveView: View {
                                                       from: .local, to: value.entity.parent!)
             })
     }
+    
+    private func addTestSphere(to content: RealityViewContent) {
+        let sphere = MeshResource.generateSphere(radius: 0.3)
+        let sEntity = ModelEntity(mesh: sphere, materials: [SimpleMaterial(color: .blue, isMetallic: false)])
+        sEntity.components.set(InputTargetComponent())
+        sEntity.components.set(CollisionComponent(shapes: [.generateSphere(radius: 0.3)]))
+        sEntity.name = "my_custom_sphere"
+        print(sEntity.name)
+        content.add(sEntity)
+    }
 }
 
 //#Preview {
 //    ImmersiveView()
 //        .previewLayout(.sizeThatFits)
 //}
+
+
+var padNames: [String] = []

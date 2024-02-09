@@ -8,6 +8,7 @@
 
 def Xform "PadTransform"
 {
+    reorder nameChildren = ["IdentifierTransform", "MutableId", "PadMesh", "PadCornersTransform", "PadCornerMaterial", "PadMaterial", "InputTarget", "Collider"]
     matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (3.6826155458413723e-9, -4.695394295595179e-9, 0.026198890060186386, 1) )
     uniform token[] xformOpOrder = ["xformOp:transform"]
 
@@ -126,6 +127,21 @@ def Xform "PadTransform"
             {
                 float3 position = (0, -2.9802322e-8, 0.0063779484)
             }
+        }
+    }
+
+    def Xform "IdentifierTransform" (
+        active = true
+    )
+    {
+        def Xform "MutableId" (
+            active = true
+        )
+        {
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
     }
 }

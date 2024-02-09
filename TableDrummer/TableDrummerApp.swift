@@ -13,12 +13,7 @@ import TableDrummerContent
 struct TableDrummerApp: App {
     @State var debugText = ""
     @State private var cannotDragElements: Bool = false
-    
-    init() {
-        print("Initializing App")
-        IdentifierComponent.registerComponent()
-    }
-    
+        
     var body: some Scene {
         WindowGroup {
             ContentView(debugText: debugText, cannotDragElements: $cannotDragElements)

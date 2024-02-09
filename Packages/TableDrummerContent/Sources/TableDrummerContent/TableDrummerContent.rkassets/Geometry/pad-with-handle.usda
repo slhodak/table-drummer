@@ -12,7 +12,7 @@ def Xform "PadHandleTransform" (
     }
 )
 {
-    reorder nameChildren = ["PadHandleMesh", "PadTransform", "PadCornerMaterial", "PadMaterial", "HandleMaterial"]
+    reorder nameChildren = ["IdentifierTransform", "Transform", "PadHandleMesh", "PadTransform", "PadCornerMaterial", "PadMaterial", "HandleMaterial", "InputTarget", "Collider", "TableDrummerContent_IdentifierComponent"]
     quatf xformOp:orient = (-4.371139e-8, 0, 0, 1)
     float3 xformOp:scale = (0.8381869, 0.8381869, 0.6731533)
     matrix4d xformOp:transform = ( (0.8381869196891785, 0, 0, 0), (0, 0.8381869196891785, 0, 0), (0, 0, 0.673153281211853, 0), (1.0648966153326e-8, -0.9146185517311096, 0.1943415254354477, 1) )
@@ -185,6 +185,26 @@ def Xform "PadHandleTransform" (
             {
                 float3 position = (0, 1.0911868, 0.006726712)
             }
+        }
+    }
+
+    def RealityKitCustomComponent "TableDrummerContent_IdentifierComponent"
+    {
+        uniform token info:id = "TableDrummerContent.IdentifierComponent"
+    }
+
+    def Xform "IdentifierTransform" (
+        active = true
+    )
+    {
+        def Xform "MutableId" (
+            active = true
+        )
+        {
+            quatf xformOp:orient = (1, 0, 0, -5.117536e-16)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (7.1054274e-15, 0, 2.9802322e-8)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
     }
 }

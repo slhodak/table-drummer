@@ -22,11 +22,6 @@ class SoundEmitter {
             emitterEntity.scale = [0.1, 0.1, 0.1]
             emitterEntity.name = "\(audioFileName)_emitter"
             
-            // It may be redundant to call .set() and add the component in Composer, but it's not working without this
-            emitterEntity.components.set(IdentifierComponent())
-            emitterEntity.components[IdentifierComponent.self]?.sharedId = audioFileName
-            emitterEntity.spatialAudio = SpatialAudioComponent()
-            
             self.entity = emitterEntity
             self.audioPlaybackController = emitterEntity.prepareAudio(resource)
         } catch {
