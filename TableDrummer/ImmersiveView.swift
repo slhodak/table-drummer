@@ -41,7 +41,7 @@ struct ImmersiveView: View {
                 guard let pad = DrumPad.create(for: sampleName),
                       let emitter = SoundEmitter(for: sampleName) else { continue }
                 
-//                linkPadToEmitter(pad: pad, emitter: emitter, identifier: sampleName)
+                linkPadToEmitter(pad: pad, emitter: emitter, identifier: sampleName)
                 
                 pad.position = [(allPadsInitialWidth/2 * -1) + (spacing * Float(i)), 1, -1.0]
                 emitter.entity?.position = [pad.position[0], pad.position[1] + 0.25, pad.position[2]]

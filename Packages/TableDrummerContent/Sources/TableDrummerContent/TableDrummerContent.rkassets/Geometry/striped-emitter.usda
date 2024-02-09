@@ -99,12 +99,16 @@ def Xform "EmitterTransform"
         }
     }
 
-    def RealityKitComponent "InputTarget"
+    def RealityKitComponent "InputTarget" (
+        active = false
+    )
     {
         uniform token info:id = "RealityKit.InputTarget"
     }
 
-    def RealityKitComponent "Collider"
+    def RealityKitComponent "Collider" (
+        active = false
+    )
     {
         uint group = 1
         uniform token info:id = "RealityKit.Collider"

@@ -1,5 +1,5 @@
 {
-  "advancedEditorSelectedIdentifier" : "ProjectBrowser",
+  "advancedEditorSelectedIdentifier" : "ShaderGraphEditorPluginID",
   "openSceneRelativePaths" : [
     "Geometry\/striped-emitter.usda",
     "Geometry\/pad-without-handle.usda"
@@ -1986,5 +1986,5 @@
       }
     ]
   },
-  "selectedSceneRelativePath" : "Geometry\/pad-without-handle.usda"
+  "selectedSceneRelativePath" : "Geometry\/striped-emitter.usda"
 }
