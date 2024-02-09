@@ -55,31 +55,15 @@ struct ImmersiveView: View {
         }
         .gesture(SpatialTapGesture()
             .targetedToAnyEntity()
-            .onEnded { gesture in
-                print(gesture.entity)
-                
-                let padIdentifierTransform = gesture.entity.findEntity(named: "IdentifierTransform")
+            .onEnded { value in
+                let padIdentifierTransform = value.entity.findEntity(named: "IdentifierTransform")
                 
                 guard let padIdentifier: String = padIdentifierTransform?.children[0].name else {
-                    print("No identifier found on tapped entity \(gesture.entity.name)")
+                    print("No identifier found on tapped entity \(value.entity.name)")
                     return
                 }
                 
-                guard let emitter = emitters[padIdentifier] else {
-                    print("No emitter for identifer \(padIdentifier)")
-                    return
-                }
-                
-                guard let audioPlaybackController = emitter.audioPlaybackController else {
-                    print("No audio playback controller on emitter \(padIdentifier)")
-                    return
-                }
-                
-                if audioPlaybackController.isPlaying {
-                    audioPlaybackController.stop()
-                }
-                
-                audioPlaybackController.play()
+                playSoundFromEmitter(by: padIdentifier)
             })
         .gesture(DragGesture()
             .targetedToAnyEntity()
@@ -89,6 +73,24 @@ struct ImmersiveView: View {
                 value.entity.position = value.convert(value.location3D,
                                                       from: .local, to: value.entity.parent!)
             })
+    }
+    
+    private func playSoundFromEmitter(by padIdentifier: String) {
+        guard let emitter = emitters[padIdentifier] else {
+            print("No emitter for identifer \(padIdentifier)")
+            return
+        }
+        
+        guard let audioPlaybackController = emitter.audioPlaybackController else {
+            print("No audio playback controller on emitter \(padIdentifier)")
+            return
+        }
+        
+        if audioPlaybackController.isPlaying {
+            audioPlaybackController.stop()
+        }
+        
+        audioPlaybackController.play()
     }
     
     private func linkPadToEmitter(pad: Entity, emitter: SoundEmitter, identifier: String) {
