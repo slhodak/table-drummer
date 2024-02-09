@@ -2,7 +2,12 @@
   "pathsToIds" : {
     "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/DrumPad.usda" : "D00E7E6A-910B-42C0-AF1A-4D79B33833D1",
     "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/Geometry\/grippable-pad.usda" : "A9A8E935-937A-4D77-86AD-6733C87EB7C7",
+    "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/Geometry\/pad-with-handle.usda" : "E60522F0-6DF1-4F7D-89E9-E4860FF4F483",
+    "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/Geometry\/pad-without-handle.usda" : "DE98DAE7-F08D-4082-8E99-4586A9ABFAF5",
+    "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/Geometry\/simple-new-pad.usda" : "4C8102B5-70F2-41C8-B983-6A3716F16995",
+    "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/Geometry\/sound-emitter-4.usda" : "B56D5293-F65B-45E1-B044-30F78263BDA0",
     "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/Geometry\/sound-emitter.usda" : "03ECABB0-33A3-4A1E-BA15-66AB19526D51",
+    "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/Geometry\/striped-emitter.usda" : "811B9467-5304-445E-B7EB-A347CFB3FB46",
     "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/grippable-pad.usda" : "014ABE0A-0CA5-401E-8BA0-CF86EC65E5F9",
     "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/grippable-pad.usdc" : "973F8552-AC22-474D-AB50-884B159E0583",
     "TableDrummerContent\/Sources\/TableDrummerContent\/TableDrummerContent.rkassets\/Immersive.usda" : "35631DC9-6E99-4864-8321-6C308624167D",

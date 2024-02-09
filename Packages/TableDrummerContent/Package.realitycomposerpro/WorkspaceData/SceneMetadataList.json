@@ -20,6 +20,54 @@
       {
         "isExpanded" : true,
         "isLocked" : false
+      },
+      [
+        "03ECABB0-33A3-4A1E-BA15-66AB19526D51",
+        "EmitterTransform",
+        "EmitterMesh"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "4C8102B5-70F2-41C8-B983-6A3716F16995" : {
+    "objectMetadataList" : [
+      [
+        "4C8102B5-70F2-41C8-B983-6A3716F16995",
+        "PadTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "4C8102B5-70F2-41C8-B983-6A3716F16995",
+        "PadTransform",
+        "PadCornerTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "4C8102B5-70F2-41C8-B983-6A3716F16995",
+        "PadTransform",
+        "PadMaterial"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "4C8102B5-70F2-41C8-B983-6A3716F16995",
+        "PadTransform",
+        "PadCornerMaterial"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
       }
     ]
   },
@@ -173,6 +221,36 @@
         "489D1B89-E770-45DA-A24D-01EAB8ED2C4C",
         "GripTransform",
         "PadMaterial"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "811B9467-5304-445E-B7EB-A347CFB3FB46" : {
+    "objectMetadataList" : [
+      [
+        "811B9467-5304-445E-B7EB-A347CFB3FB46",
+        "EmitterTransform",
+        "EmitterStripesMaterial"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "811B9467-5304-445E-B7EB-A347CFB3FB46",
+        "EmitterTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "811B9467-5304-445E-B7EB-A347CFB3FB46",
+        "EmitterTransform",
+        "EmitterStripesTransform"
       ],
       {
         "isExpanded" : true,
@@ -369,6 +447,36 @@
       }
     ]
   },
+  "B56D5293-F65B-45E1-B044-30F78263BDA0" : {
+    "objectMetadataList" : [
+      [
+        "B56D5293-F65B-45E1-B044-30F78263BDA0",
+        "EmitterTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "B56D5293-F65B-45E1-B044-30F78263BDA0",
+        "EmitterTransform",
+        "EmitterStripeTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "B56D5293-F65B-45E1-B044-30F78263BDA0",
+        "EmitterTransform",
+        "EmitterStripeMaterial"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
   "D00E7E6A-910B-42C0-AF1A-4D79B33833D1" : {
     "objectMetadataList" : [
       [
@@ -421,6 +529,76 @@
       [
         "D32D3870-E36C-419B-A540-6FE3FAC4AF97",
         "EmitterTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "DE98DAE7-F08D-4082-8E99-4586A9ABFAF5" : {
+    "objectMetadataList" : [
+      [
+        "DE98DAE7-F08D-4082-8E99-4586A9ABFAF5",
+        "PadTransform",
+        "PadCornerMaterial"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "DE98DAE7-F08D-4082-8E99-4586A9ABFAF5",
+        "PadTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "DE98DAE7-F08D-4082-8E99-4586A9ABFAF5",
+        "PadTransform",
+        "PadCornersTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "E60522F0-6DF1-4F7D-89E9-E4860FF4F483" : {
+    "objectMetadataList" : [
+      [
+        "E60522F0-6DF1-4F7D-89E9-E4860FF4F483",
+        "PadHandleTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "E60522F0-6DF1-4F7D-89E9-E4860FF4F483",
+        "PadHandleTransform",
+        "PadTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "E60522F0-6DF1-4F7D-89E9-E4860FF4F483",
+        "PadHandleTransform",
+        "PadTransform",
+        "PadCornersTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "E60522F0-6DF1-4F7D-89E9-E4860FF4F483",
+        "PadHandleTransform",
+        "HandleMaterial"
       ],
       {
         "isExpanded" : true,

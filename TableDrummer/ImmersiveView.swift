@@ -19,13 +19,12 @@ struct ImmersiveView: View {
         "indie-rock-snare",
         "heavy-rock-closed-hi-hat",
         "heavy-rock-floor-tom",
-        "heavy-rock-tom-3",
-        "heavy-rock-tom-2",
-        "heavy-rock-tom"
+//        "heavy-rock-tom-3",
+//        "heavy-rock-tom-2",
+//        "heavy-rock-tom"
     ]
     
     // you can position them as a group and individually on top of the table
-    // app encourages you to adjust height to combat latency -- a fine Y adjustment slider
     
     var body: some View {
         RealityView { content in

@@ -13,7 +13,7 @@ import TableDrummerContent
 class DrumPad {
     static func create(for audioFileName: String) -> Entity? {
         do {
-            let padEntity = try Entity.load(named: "Geometry/grippable-pad", in: tableDrummerContentBundle)
+            let padEntity = try Entity.load(named: "Geometry/pad-without-handle", in: tableDrummerContentBundle)
             padEntity.scale = [0.1, 0.1, 0.1]
             padEntity.name = "\(audioFileName)_pad"
             padEntity.components.set(IdentifierComponent())
