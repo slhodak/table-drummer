@@ -68,7 +68,10 @@ struct ImmersiveView: View {
         .gesture(DragGesture()
             .targetedToAnyEntity()
             .onChanged { value in
-                guard cannotDragElements == false else { return }
+                if value.entity.name.contains("Pad") &&
+                    cannotDragElements == true {
+                    return
+                }
                 
                 value.entity.position = value.convert(value.location3D,
                                                       from: .local,
