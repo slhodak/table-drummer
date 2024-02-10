@@ -25,13 +25,16 @@ struct ContentView: View {
                 Toggle("Lock Pads", isOn: $cannotDragElements)
                     .frame(width: 250)
             }
-            VStack(alignment: .leading) {
-                Text("How to Play")
-                    .font(.largeTitle)
-                Text("1. Move the square pads into arm's reach with Eye Tracking + Pinch Gesture")
-                Text("2. Tap the pads with your hands to trigger sounds\n\t(Pinch and click also works)")
-                Text("3. Each pad has a speaker. Move the speaker to move the source of the sound")
-                Text("4. To prevent moving the pads while playing, use the 'Lock Pads' toggle.")
+            
+            if !immersiveSpaceIsShown {
+                VStack(alignment: .leading) {
+                    Text("How to Play")
+                        .font(.largeTitle)
+                    Text("1. Move the square pads into arm's reach with Eye Tracking + Pinch Gesture.")
+                    Text("2. Tap the pads with your hands to trigger sounds.\n\t(Pinch and click also works.)")
+                    Text("3. Each pad has a speaker. Move the speaker to move the source of the sound.")
+                    Text("4. To prevent moving the pads while playing, use the 'Lock Pads' toggle.")
+                }
             }
             
             Toggle(immersiveSpaceIsShown ? "Stop": "Start", isOn: $showImmersiveSpace)
