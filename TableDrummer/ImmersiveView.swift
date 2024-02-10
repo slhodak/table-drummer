@@ -56,6 +56,8 @@ struct ImmersiveView: View {
         .gesture(SpatialTapGesture()
             .targetedToAnyEntity()
             .onEnded { value in
+                guard value.entity.name.contains("Pad") else { return }
+                
                 let padIdentifierTransform = value.entity.findEntity(named: "IdentifierTransform")
                 
                 guard let padIdentifier: String = padIdentifierTransform?.children[0].name else {
