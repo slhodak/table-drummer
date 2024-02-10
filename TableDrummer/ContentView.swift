@@ -21,7 +21,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
 //            DebugView(debugText: debugText)
-            Toggle("Lock Pads & Emitters", isOn: $cannotDragElements)
+            Toggle("Lock Pads", isOn: $cannotDragElements)
                 .frame(width: 250)
             
             Toggle("Show Immersive Space", isOn: $showImmersiveSpace)
