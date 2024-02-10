@@ -21,10 +21,12 @@ struct ContentView: View {
     var body: some View {
         VStack {
 //            DebugView(debugText: debugText)
-            Toggle("Lock Pads", isOn: $cannotDragElements)
-                .frame(width: 250)
+            if immersiveSpaceIsShown {
+                Toggle("Lock Pads", isOn: $cannotDragElements)
+                    .frame(width: 250)
+            }
             
-            Toggle("Show Immersive Space", isOn: $showImmersiveSpace)
+            Toggle(immersiveSpaceIsShown ? "Stop": "Start", isOn: $showImmersiveSpace)
                 .toggleStyle(.button)
                 .padding(.top, 50)
             

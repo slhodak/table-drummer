@@ -71,7 +71,8 @@ struct ImmersiveView: View {
                 guard cannotDragElements == false else { return }
                 
                 value.entity.position = value.convert(value.location3D,
-                                                      from: .local, to: value.entity.parent!)
+                                                      from: .local,
+                                                      to: value.entity.parent!)
             })
     }
     
