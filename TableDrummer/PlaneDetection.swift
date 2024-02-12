@@ -17,7 +17,15 @@ import RealityKit
 func updatePlane(_ anchor: PlaneAnchor) {
     if planeAnchors[anchor.id] == nil {
         // Add a new entity to represent this plane.
-        let entity = ModelEntity(mesh: .generateText(anchor.classification.description))
+        
+        // add a collider to the plane anchor
+        // add a physics body component -- not affected by gravity
+        // hyp: the PlaneAnchor is an entity that can have components -- no
+        // hyp: the planeAnchor has a size/extent -- yes
+        let planeGeometry = MeshResource.generatePlane(width: anchor.geometry.extent.width, depth: anchor.geometry.extent.height)
+        let material = SimpleMaterial(color: .blue, roughness: 0.8, isMetallic: false)
+        let entity = ModelEntity(mesh: planeGeometry, materials: [material])
+        entity.components.set(PhysicsBodyComponent())
         entityMap[anchor.id] = entity
         root.addChild(entity)
     }
