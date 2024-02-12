@@ -2,8 +2,7 @@
   "advancedEditorSelectedIdentifier" : "ProjectBrowser",
   "openSceneRelativePaths" : [
     "Geometry\/striped-emitter.usda",
-    "Geometry\/pad-without-handle.usda",
-    "Geometry\/blankEntity.usda"
+    "Geometry\/pad-without-handle.usda"
   ],
   "recentIdentifiers" : {
     "03ECABB0-33A3-4A1E-BA15-66AB19526D51" : [
@@ -2083,5 +2082,5 @@
       }
     ]
   },
-  "selectedSceneRelativePath" : "Geometry\/blankEntity.usda"
+  "selectedSceneRelativePath" : "Geometry\/pad-without-handle.usda"
 }

@@ -12,6 +12,9 @@ import Combine
 import TableDrummerContent
 
 
+@MainActor var root = Entity()
+
+
 struct ImmersiveView: View {
     @State private var emitters: [String: SoundEmitter] = [:]
     @State private var pads: [Entity] = []
@@ -32,7 +35,6 @@ struct ImmersiveView: View {
     
     var body: some View {
         RealityView { content in
-            var root = Entity()
             let spacing: Float = 0.22
             var i = 0
             let allPadsInitialWidth = spacing * Float(audioSamples.count - 1)
@@ -52,7 +54,6 @@ struct ImmersiveView: View {
                 pad.position = [(allPadsInitialWidth/2 * -1) + (spacing * Float(i)), 1, -1.0]
                 emitter.entity?.position = [pad.position[0], pad.position[1] + 0.25, pad.position[2]]
                 
-                
                 root.addChild(pad)
                 root.addChild(emitter.entity!)
                 pads.append(pad)
@@ -61,23 +62,12 @@ struct ImmersiveView: View {
             }
             
             content.add(root)
-            
-//            enablePlaneDetection()
         } update: { content in
-            print(gravityIsEnabled)
-            let root = content.entities[0]
-            if gravityIsEnabled {
-                root.components[PhysicsSimulationComponent.self]?.gravity = gravity
-            } else {
-                root.components[PhysicsSimulationComponent.self]?.gravity = [0, 0, 0]
-                
-                // Reset pad physics body components to halt falling
-                let physicsQuery = EntityQuery(where: .has(PhysicsBodyComponent.self))
-                root.scene?.performQuery(physicsQuery).forEach { entity in
-                    entity.components.remove(PhysicsBodyComponent.self)
-                    entity.components.set(PhysicsBodyComponent())
-                }
-            }
+            
+#if !targetEnvironment(simulator)
+            detectPlanes()
+#endif
+            handleGravityToggle(content: content)
         }
         .gesture(SpatialTapGesture()
             .targetedToAnyEntity()
@@ -107,12 +97,20 @@ struct ImmersiveView: View {
             })
     }
     
-    private func updatePlane(_ anchor: PlaneAnchor) async {
-        
-    }
-    
-    private func removePlane(_ anchor: PlaneAnchor) async {
-        
+    private func handleGravityToggle(content: RealityViewContent) {
+        let root = content.entities[0]
+        if gravityIsEnabled {
+            root.components[PhysicsSimulationComponent.self]?.gravity = gravity
+        } else {
+            root.components[PhysicsSimulationComponent.self]?.gravity = [0, 0, 0]
+            
+            // Reset pad physics body components to halt falling
+            let physicsQuery = EntityQuery(where: .has(PhysicsBodyComponent.self))
+            root.scene?.performQuery(physicsQuery).forEach { entity in
+                entity.components.remove(PhysicsBodyComponent.self)
+                entity.components.set(PhysicsBodyComponent())
+            }
+        }
     }
     
     private func playSoundFromEmitter(by padIdentifier: String) {
@@ -143,11 +141,9 @@ struct ImmersiveView: View {
         emitterIdTransform?.name = padIdentifier // not used on this entity for now
     }
     
-    // Todo: Finish
     // detect table planes
     // add colliders to them
-    private func enablePlaneDetection() {
-#if !targetEnvironment(simulator)
+    private func detectPlanes() {
         Task {
             try await arSession.run([planeData])
             for await update in planeData.anchorUpdates {
@@ -159,14 +155,5 @@ struct ImmersiveView: View {
                 }
             }
         }
-#endif
     }
 }
-
-//#Preview {
-//    ImmersiveView()
-//        .previewLayout(.sizeThatFits)
-//}
-
-
-var padNames: [String] = []
