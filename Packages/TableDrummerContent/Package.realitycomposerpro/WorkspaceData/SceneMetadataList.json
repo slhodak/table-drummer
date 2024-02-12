@@ -37,7 +37,7 @@
       [
         "4C8102B5-70F2-41C8-B983-6A3716F16995",
         "PadTransform",
-        "PadCornerTransform"
+        "PadMaterial"
       ],
       {
         "isExpanded" : true,
@@ -46,7 +46,7 @@
       [
         "4C8102B5-70F2-41C8-B983-6A3716F16995",
         "PadTransform",
-        "PadMaterial"
+        "PadCornerTransform"
       ],
       {
         "isExpanded" : true,
@@ -83,31 +83,24 @@
       }
     ]
   },
+  "88BF1CA2-1ABE-4D2F-B5A9-B4638511756D" : {
+    "objectMetadataList" : [
+      [
+        "88BF1CA2-1ABE-4D2F-B5A9-B4638511756D",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
   "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2" : {
     "objectMetadataList" : [
       [
         "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
         "PadTransform",
-        "GripTransform",
-        "GripMesh"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
-        "PadTransform",
         "GripTransform"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
-        "Cube",
-        "Cylinder"
       ],
       {
         "isExpanded" : true,
@@ -125,17 +118,7 @@
       },
       [
         "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
-        "root",
-        "GripMaterial"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
-        "root",
-        "PadMaterial"
+        "root"
       ],
       {
         "isExpanded" : true,
@@ -152,7 +135,36 @@
       },
       [
         "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
-        "root"
+        "root",
+        "GripMaterial"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
+        "PadTransform",
+        "GripTransform",
+        "GripMesh"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
+        "root",
+        "PadMaterial"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "99F56BE3-1D71-49AE-8BA9-E6A0CE7E72B2",
+        "Cube",
+        "Cylinder"
       ],
       {
         "isExpanded" : true,
@@ -162,32 +174,6 @@
   },
   "489D1B89-E770-45DA-A24D-01EAB8ED2C4C" : {
     "objectMetadataList" : [
-      [
-        "489D1B89-E770-45DA-A24D-01EAB8ED2C4C",
-        "GripTransform",
-        "PadMaterial"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "489D1B89-E770-45DA-A24D-01EAB8ED2C4C",
-        "GripTransform",
-        "GripMaterial"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "489D1B89-E770-45DA-A24D-01EAB8ED2C4C",
-        "GripTransform"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
       [
         "489D1B89-E770-45DA-A24D-01EAB8ED2C4C",
         "Cube",
@@ -211,8 +197,16 @@
       },
       [
         "489D1B89-E770-45DA-A24D-01EAB8ED2C4C",
+        "GripTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "489D1B89-E770-45DA-A24D-01EAB8ED2C4C",
         "GripTransform",
-        "PadTransform"
+        "PadMaterial"
       ],
       {
         "isExpanded" : true,
@@ -225,6 +219,24 @@
       {
         "isExpanded" : true,
         "isLocked" : false
+      },
+      [
+        "489D1B89-E770-45DA-A24D-01EAB8ED2C4C",
+        "GripTransform",
+        "PadTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "489D1B89-E770-45DA-A24D-01EAB8ED2C4C",
+        "GripTransform",
+        "GripMaterial"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
       }
     ]
   },
@@ -233,16 +245,7 @@
       [
         "811B9467-5304-445E-B7EB-A347CFB3FB46",
         "EmitterTransform",
-        "EmitterStripesMaterial"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "811B9467-5304-445E-B7EB-A347CFB3FB46",
-        "EmitterTransform",
-        "IdentifierTransform"
+        "EmitterStripesTransform"
       ],
       {
         "isExpanded" : true,
@@ -259,7 +262,16 @@
       [
         "811B9467-5304-445E-B7EB-A347CFB3FB46",
         "EmitterTransform",
-        "EmitterStripesTransform"
+        "EmitterStripesMaterial"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "811B9467-5304-445E-B7EB-A347CFB3FB46",
+        "EmitterTransform",
+        "IdentifierTransform"
       ],
       {
         "isExpanded" : true,
@@ -285,7 +297,9 @@
       },
       [
         "973F8552-AC22-474D-AB50-884B159E0583",
-        "GripTransform"
+        "root",
+        "GripTransform",
+        "PadTransform"
       ],
       {
         "isExpanded" : true,
@@ -293,9 +307,7 @@
       },
       [
         "973F8552-AC22-474D-AB50-884B159E0583",
-        "root",
-        "GripTransform",
-        "PadTransform"
+        "GripTransform"
       ],
       {
         "isExpanded" : true,
@@ -305,15 +317,6 @@
   },
   "4641E9AC-36DF-4B18-985D-F40BB79694B0" : {
     "objectMetadataList" : [
-      [
-        "4641E9AC-36DF-4B18-985D-F40BB79694B0",
-        "Sphere",
-        "Sphere_002"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
       [
         "4641E9AC-36DF-4B18-985D-F40BB79694B0",
         "EmitterTransform",
@@ -330,6 +333,15 @@
       {
         "isExpanded" : true,
         "isLocked" : false
+      },
+      [
+        "4641E9AC-36DF-4B18-985D-F40BB79694B0",
+        "Sphere",
+        "Sphere_002"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
       }
     ]
   },
@@ -337,7 +349,8 @@
     "objectMetadataList" : [
       [
         "5865D184-195C-473C-8B1C-BE333EE68E3D",
-        "Root"
+        "Root",
+        "Cylinder"
       ],
       {
         "isExpanded" : true,
@@ -345,8 +358,7 @@
       },
       [
         "5865D184-195C-473C-8B1C-BE333EE68E3D",
-        "Root",
-        "Cylinder"
+        "Root"
       ],
       {
         "isExpanded" : true,
@@ -380,8 +392,7 @@
       [
         "61292A3B-5E6B-45E9-9417-90EC3159230C",
         "EmitterTransform",
-        "EmitterMesh",
-        "EmitterMaterial"
+        "EmitterMesh"
       ],
       {
         "isExpanded" : true,
@@ -392,6 +403,16 @@
         "Sphere",
         "Sphere_002",
         "Material"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "61292A3B-5E6B-45E9-9417-90EC3159230C",
+        "EmitterTransform",
+        "EmitterMesh",
+        "EmitterMaterial"
       ],
       {
         "isExpanded" : true,
@@ -408,7 +429,8 @@
       [
         "61292A3B-5E6B-45E9-9417-90EC3159230C",
         "EmitterTransform",
-        "EmitterMesh"
+        "Sphere_002",
+        "Material"
       ],
       {
         "isExpanded" : true,
@@ -418,16 +440,6 @@
         "61292A3B-5E6B-45E9-9417-90EC3159230C",
         "Sphere",
         "Sphere_002"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "61292A3B-5E6B-45E9-9417-90EC3159230C",
-        "EmitterTransform",
-        "Sphere_002",
-        "Material"
       ],
       {
         "isExpanded" : true,
@@ -460,7 +472,8 @@
     "objectMetadataList" : [
       [
         "B56D5293-F65B-45E1-B044-30F78263BDA0",
-        "EmitterTransform"
+        "EmitterTransform",
+        "EmitterStripeMaterial"
       ],
       {
         "isExpanded" : true,
@@ -477,8 +490,7 @@
       },
       [
         "B56D5293-F65B-45E1-B044-30F78263BDA0",
-        "EmitterTransform",
-        "EmitterStripeMaterial"
+        "EmitterTransform"
       ],
       {
         "isExpanded" : true,
@@ -488,14 +500,6 @@
   },
   "D00E7E6A-910B-42C0-AF1A-4D79B33833D1" : {
     "objectMetadataList" : [
-      [
-        "D00E7E6A-910B-42C0-AF1A-4D79B33833D1",
-        "Transform"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
       [
         "D00E7E6A-910B-42C0-AF1A-4D79B33833D1",
         "Cylinder",
@@ -509,6 +513,14 @@
         "D00E7E6A-910B-42C0-AF1A-4D79B33833D1",
         "Transform",
         "Cylinder"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "D00E7E6A-910B-42C0-AF1A-4D79B33833D1",
+        "Transform"
       ],
       {
         "isExpanded" : true,
@@ -529,7 +541,7 @@
       },
       [
         "D32D3870-E36C-419B-A540-6FE3FAC4AF97",
-        "EmitterTransform"
+        "Sphere"
       ],
       {
         "isExpanded" : true,
@@ -537,7 +549,19 @@
       },
       [
         "D32D3870-E36C-419B-A540-6FE3FAC4AF97",
-        "Sphere"
+        "EmitterTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
+  "D272BEA2-1838-4D83-BFF7-2A2CEC799D70" : {
+    "objectMetadataList" : [
+      [
+        "D272BEA2-1838-4D83-BFF7-2A2CEC799D70",
+        "Root"
       ],
       {
         "isExpanded" : true,
@@ -559,6 +583,15 @@
       [
         "DE98DAE7-F08D-4082-8E99-4586A9ABFAF5",
         "PadTransform",
+        "PadCornersTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "DE98DAE7-F08D-4082-8E99-4586A9ABFAF5",
+        "PadTransform",
         "PadCornerMaterial"
       ],
       {
@@ -572,20 +605,20 @@
       {
         "isExpanded" : true,
         "isLocked" : false
-      },
-      [
-        "DE98DAE7-F08D-4082-8E99-4586A9ABFAF5",
-        "PadTransform",
-        "PadCornersTransform"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
       }
     ]
   },
   "E60522F0-6DF1-4F7D-89E9-E4860FF4F483" : {
     "objectMetadataList" : [
+      [
+        "E60522F0-6DF1-4F7D-89E9-E4860FF4F483",
+        "PadHandleTransform",
+        "PadTransform"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
       [
         "E60522F0-6DF1-4F7D-89E9-E4860FF4F483",
         "PadHandleTransform",
@@ -600,15 +633,6 @@
         "PadHandleTransform",
         "PadTransform",
         "PadCornersTransform"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "E60522F0-6DF1-4F7D-89E9-E4860FF4F483",
-        "PadHandleTransform",
-        "PadTransform"
       ],
       {
         "isExpanded" : true,

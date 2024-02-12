@@ -100,14 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				174CC91E2B7432F0009B0C36 /* TableDrummerApp.swift */,
-				174CC9202B7432F0009B0C36 /* ContentView.swift */,
-				174CC9222B7432F0009B0C36 /* ImmersiveView.swift */,
+				17D6772E2B7A8DD000CAD649 /* Views */,
+				17D6772D2B7A8DBF00CAD649 /* Objects */,
 				174CC9242B7432F2009B0C36 /* Assets.xcassets */,
 				174CC9292B7432F2009B0C36 /* Info.plist */,
 				174CC9262B7432F2009B0C36 /* Preview Content */,
-				174C08422B74BD6200AAC4FE /* DrumPad.swift */,
-				172F1A172B7593AD001F9B12 /* SoundEmitter.swift */,
-				172F19962B754E67001F9B12 /* DebugView.swift */,
 			);
 			path = TableDrummer;
 			sourceTree = "<group>";
@@ -174,6 +171,25 @@
 				1756B4A02B75D71D00729672 /* heavy-rock-closed-hi-hat.wav */,
 			);
 			path = Hat;
+			sourceTree = "<group>";
+		};
+		17D6772D2B7A8DBF00CAD649 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				174C08422B74BD6200AAC4FE /* DrumPad.swift */,
+				172F1A172B7593AD001F9B12 /* SoundEmitter.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		17D6772E2B7A8DD000CAD649 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				174CC9222B7432F0009B0C36 /* ImmersiveView.swift */,
+				174CC9202B7432F0009B0C36 /* ContentView.swift */,
+				172F19962B754E67001F9B12 /* DebugView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

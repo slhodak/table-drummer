@@ -149,5 +149,22 @@ def Xform "PadTransform"
     {
         uniform token info:id = "RealityKit.GroundingShadow"
     }
+
+    def RealityKitComponent "RigidBody"
+    {
+        bool gravityEnabled = 1
+        uniform token info:id = "RealityKit.RigidBody"
+
+        def RealityKitStruct "massFrame"
+        {
+            def RealityKitStruct "m_pose"
+            {
+            }
+        }
+
+        def RealityKitStruct "material"
+        {
+        }
+    }
 }
 

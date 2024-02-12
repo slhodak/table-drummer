@@ -12,6 +12,7 @@ struct ContentView: View {
     var debugText: String
     
     @Binding var cannotDragElements: Bool
+    @Binding var gravityIsEnabled: Bool
     @State private var showImmersiveSpace = false
     @State private var immersiveSpaceIsShown = false
     
@@ -24,6 +25,10 @@ struct ContentView: View {
             if immersiveSpaceIsShown {
                 Toggle("Lock Pads", isOn: $cannotDragElements)
                     .frame(width: 250)
+                
+                Toggle("Gravity", isOn: $gravityIsEnabled)
+                    .frame(width: 250)
+                
             }
             
             if !immersiveSpaceIsShown {
