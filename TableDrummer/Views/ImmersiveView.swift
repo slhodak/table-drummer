@@ -12,18 +12,18 @@ import Combine
 import TableDrummerContent
 
 
-@MainActor var root = Entity()
 
 
 struct ImmersiveView: View {
     @State private var emitters: [String: SoundEmitter] = [:]
     @State private var pads: [Entity] = []
+    let planeDetection = PlaneDetection()
+    let root = Entity()
+    
     @Binding var debugText: String
     var cannotDragElements: Bool
     var gravityIsEnabled: Bool
     let gravity: SIMD3<Float> = [0, -0.5, 0]
-    let arSession = ARKitSession()
-    let planeData = PlaneDetectionProvider(alignments: [.horizontal])
     
     let colors: [RealityFoundation.Material.Color] = [.blue, .red, .green, .yellow]
     let audioSamples: [String] = [
@@ -62,10 +62,13 @@ struct ImmersiveView: View {
             }
             
             content.add(root)
+            
+            planeDetection.detectPlanesAndAdd(to: root)
+            
         } update: { content in
             
 #if !targetEnvironment(simulator)
-            detectPlanes()
+            planeDetection.updatePlanes()
 #endif
             handleGravityToggle(content: content)
         }
@@ -141,19 +144,5 @@ struct ImmersiveView: View {
         emitterIdTransform?.name = padIdentifier // not used on this entity for now
     }
     
-    // detect table planes
-    // add colliders to them
-    private func detectPlanes() {
-        Task {
-            try await arSession.run([planeData])
-            for await update in planeData.anchorUpdates {
-                switch update .event {
-                case .added, .updated:
-                    await updatePlane(update.anchor)
-                case .removed:
-                    await removePlane(update.anchor)
-                }
-            }
-        }
-    }
+    
 }
