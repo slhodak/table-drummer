@@ -12,13 +12,10 @@ import Combine
 import TableDrummerContent
 
 
-
-
 struct ImmersiveView: View {
     @State private var emitters: [String: SoundEmitter] = [:]
     @State private var pads: [Entity] = []
     let planeDetection = PlaneDetection()
-    let root = Entity()
     
     @Binding var debugText: String
     var cannotDragElements: Bool
@@ -35,6 +32,7 @@ struct ImmersiveView: View {
     
     var body: some View {
         RealityView { content in
+            let root = Entity()
             let spacing: Float = 0.22
             var i = 0
             let allPadsInitialWidth = spacing * Float(audioSamples.count - 1)
@@ -63,13 +61,15 @@ struct ImmersiveView: View {
             
             content.add(root)
             
-            planeDetection.detectPlanesAndAdd(to: root)
+//#if !targetEnvironment(simulator)
+//            planeDetection.detectPlanesAndAdd(to: root)
+//#endif
             
         } update: { content in
             
-#if !targetEnvironment(simulator)
-            planeDetection.updatePlanes()
-#endif
+//#if !targetEnvironment(simulator)
+//            planeDetection.updatePlanes()
+//#endif
             handleGravityToggle(content: content)
         }
         .gesture(SpatialTapGesture()
