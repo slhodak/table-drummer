@@ -11,10 +11,12 @@ import TableDrummerContent
 
 
 class SoundEmitter {
+    var name: String
     var entity: Entity?
     var audioPlaybackController: AudioPlaybackController?
     
     init?(for audioFileName: String) {
+        name = audioFileName
         do {
             let emitterEntity = try Entity.load(named: "Geometry/striped-emitter", in: tableDrummerContentBundle)
             guard let spatialAudioTransform = emitterEntity.findEntity(named: "SpatialAudioTransform") else {

@@ -1,8 +1,7 @@
 {
   "advancedEditorSelectedIdentifier" : "ProjectBrowser",
   "openSceneRelativePaths" : [
-    "Geometry\/striped-emitter.usda",
-    "Geometry\/pad-without-handle.usda"
+    "Geometry\/striped-emitter.usda"
   ],
   "recentIdentifiers" : {
     "03ECABB0-33A3-4A1E-BA15-66AB19526D51" : [
@@ -1365,6 +1364,54 @@
         ]
       }
     ],
+    "A53EA280-CDE0-4AA6-B973-8AD9C1CE3581" : [
+      {
+        "date" : 729648791.081171,
+        "title" : "Untitled",
+        "transform" : [
+          1,
+          0,
+          -0,
+          0,
+          -0,
+          0.86602557,
+          -0.49999976,
+          0,
+          0,
+          0.49999976,
+          0.86602557,
+          0,
+          0,
+          0.5894309,
+          1.0209244,
+          1
+        ]
+      }
+    ],
+    "A707372B-02EF-4F52-994C-BF9C10C2756A" : [
+      {
+        "date" : 729648757.935776,
+        "title" : "Untitled",
+        "transform" : [
+          0.99999994,
+          0,
+          -0,
+          0,
+          -0,
+          0.8660254,
+          -0.49999994,
+          0,
+          0,
+          0.49999994,
+          0.8660254,
+          0,
+          0,
+          0.18876648,
+          0.32695314,
+          1
+        ]
+      }
+    ],
     "B56D5293-F65B-45E1-B044-30F78263BDA0" : [
       {
         "date" : 729151719.872258,
@@ -1837,6 +1884,50 @@
     ],
     "DE98DAE7-F08D-4082-8E99-4586A9ABFAF5" : [
       {
+        "date" : 729647694.917192,
+        "title" : "Untitled",
+        "transform" : [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0.86810017,
+          -0.49638915,
+          0,
+          0,
+          0.49638915,
+          0.86810017,
+          0,
+          1.103058e-09,
+          1.5748636,
+          2.729862,
+          1
+        ]
+      },
+      {
+        "date" : 729647693.436154,
+        "title" : "Untitled",
+        "transform" : [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0.86810017,
+          -0.49638915,
+          0,
+          0,
+          0.49638915,
+          0.86810017,
+          0,
+          1.8270436e-09,
+          1.1328583,
+          1.9710448,
+          1
+        ]
+      },
+      {
         "date" : 729190247.258139,
         "title" : "Untitled",
         "transform" : [
@@ -2082,5 +2173,5 @@
       }
     ]
   },
-  "selectedSceneRelativePath" : "Geometry\/pad-without-handle.usda"
+  "selectedSceneRelativePath" : "Geometry\/striped-emitter.usda"
 }

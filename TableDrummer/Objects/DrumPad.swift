@@ -13,7 +13,7 @@ import TableDrummerContent
 class DrumPad: ObservableObject {
     static func create(for audioFileName: String) -> Entity? {
         do {
-            let padEntity = try Entity.load(named: "Geometry/pad-without-handle", in: tableDrummerContentBundle)
+            let padEntity = try Entity.load(named: "Geometry/drum-pad", in: tableDrummerContentBundle)
             padEntity.scale = [0.025, 0.025, 0.025]
             
             return padEntity

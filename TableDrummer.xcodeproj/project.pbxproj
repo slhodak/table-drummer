@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17071F042B7ED934009C1760 /* DrumsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17071F032B7ED934009C1760 /* DrumsModel.swift */; };
 		172F19972B754E67001F9B12 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F19962B754E67001F9B12 /* DebugView.swift */; };
 		172F19A02B755C0D001F9B12 /* TableDrummerContent in Frameworks */ = {isa = PBXBuildFile; productRef = 172F199F2B755C0D001F9B12 /* TableDrummerContent */; };
 		172F1A182B7593AD001F9B12 /* SoundEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F1A172B7593AD001F9B12 /* SoundEmitter.swift */; };
@@ -25,10 +26,11 @@
 		1756B4A72B75D75B00729672 /* punchy-acoustic-rock-snare-one-shot_F_major.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1756B49C2B75D71D00729672 /* punchy-acoustic-rock-snare-one-shot_F_major.wav */; };
 		1756B4A82B75D75D00729672 /* indie-rock-snare.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1756B49D2B75D71D00729672 /* indie-rock-snare.wav */; };
 		1756B4A92B75D76000729672 /* heavy-rock-closed-hi-hat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1756B4A02B75D71D00729672 /* heavy-rock-closed-hi-hat.wav */; };
-		1759BBAB2B7AB62B00B97F36 /* PlaneDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1759BBAA2B7AB62B00B97F36 /* PlaneDetection.swift */; };
+		1759BBAB2B7AB62B00B97F36 /* PlaneDetectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1759BBAA2B7AB62B00B97F36 /* PlaneDetectionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17071F032B7ED934009C1760 /* DrumsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrumsModel.swift; sourceTree = "<group>"; };
 		172F19962B754E67001F9B12 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		172F199C2B755BEE001F9B12 /* TableDrummerContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TableDrummerContent; sourceTree = "<group>"; };
 		172F1A172B7593AD001F9B12 /* SoundEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEmitter.swift; sourceTree = "<group>"; };
@@ -49,7 +51,7 @@
 		1756B49C2B75D71D00729672 /* punchy-acoustic-rock-snare-one-shot_F_major.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "punchy-acoustic-rock-snare-one-shot_F_major.wav"; sourceTree = "<group>"; };
 		1756B49D2B75D71D00729672 /* indie-rock-snare.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "indie-rock-snare.wav"; sourceTree = "<group>"; };
 		1756B4A02B75D71D00729672 /* heavy-rock-closed-hi-hat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "heavy-rock-closed-hi-hat.wav"; sourceTree = "<group>"; };
-		1759BBAA2B7AB62B00B97F36 /* PlaneDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneDetection.swift; sourceTree = "<group>"; };
+		1759BBAA2B7AB62B00B97F36 /* PlaneDetectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneDetectionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,12 +104,13 @@
 			isa = PBXGroup;
 			children = (
 				174CC91E2B7432F0009B0C36 /* TableDrummerApp.swift */,
+				17071F032B7ED934009C1760 /* DrumsModel.swift */,
+				1759BBAA2B7AB62B00B97F36 /* PlaneDetectionModel.swift */,
 				17D6772E2B7A8DD000CAD649 /* Views */,
 				17D6772D2B7A8DBF00CAD649 /* Objects */,
 				174CC9242B7432F2009B0C36 /* Assets.xcassets */,
 				174CC9292B7432F2009B0C36 /* Info.plist */,
 				174CC9262B7432F2009B0C36 /* Preview Content */,
-				1759BBAA2B7AB62B00B97F36 /* PlaneDetection.swift */,
 			);
 			path = TableDrummer;
 			sourceTree = "<group>";
@@ -282,7 +285,8 @@
 				174CC91F2B7432F0009B0C36 /* TableDrummerApp.swift in Sources */,
 				174C08432B74BD6200AAC4FE /* DrumPad.swift in Sources */,
 				172F1A182B7593AD001F9B12 /* SoundEmitter.swift in Sources */,
-				1759BBAB2B7AB62B00B97F36 /* PlaneDetection.swift in Sources */,
+				1759BBAB2B7AB62B00B97F36 /* PlaneDetectionModel.swift in Sources */,
+				17071F042B7ED934009C1760 /* DrumsModel.swift in Sources */,
 				174CC9232B7432F0009B0C36 /* ImmersiveView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
