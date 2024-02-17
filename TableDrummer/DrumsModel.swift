@@ -11,8 +11,10 @@ import TableDrummerContent
 
 
 class DrumsModel: ObservableObject {
-    private var emitters: [String: SoundEmitter] = [:]
-    var pads = [Entity]()
+    private var contentEntity = Entity()
+    private var emitters = [String: SoundEmitter]()
+    private var pads = [String: DrumPad]()
+    private let tapDelayRequiredSeconds = 0.1
     
     let colors: [RealityFoundation.Material.Color] = [.blue, .red, .green, .yellow]
     let audioSamples: [String] = [
@@ -21,7 +23,6 @@ class DrumsModel: ObservableObject {
         "heavy-rock-closed-hi-hat",
         "heavy-rock-floor-tom"
     ]
-    private var contentEntity = Entity()
     
     func setupEntity() -> Entity {
         let spacing: Float = 0.22
@@ -30,18 +31,21 @@ class DrumsModel: ObservableObject {
         
         for sampleName in audioSamples {
             // Only add pad and emitter if both can be made
-            guard let pad = DrumPad.create(for: sampleName),
-                  let emitter = SoundEmitter(for: sampleName) else { continue }
+            guard let pad = DrumPad(name: sampleName),
+                  let emitter = SoundEmitter(name: sampleName) else { continue }
             
 //            setPadEmitterPairColor(pad: pad, emitter: emitter, color: colors[i])
             linkPadToEmitter(pad: pad, emitter: emitter, identifier: sampleName)
             
-            pad.position = [(allPadsInitialWidth/2 * -1) + (spacing * Float(i)), 1, -0.6]
-            emitter.entity?.position = [pad.position[0], pad.position[1] + 0.25, pad.position[2]]
+            pad.entity.position = [(allPadsInitialWidth/2 * -1) + (spacing * Float(i)), 1, -0.6]
+            emitter.entity.position = [
+                pad.entity.position[0],
+                pad.entity.position[1] + 0.25,
+                pad.entity.position[2]
+            ]
             
-            contentEntity.addChild(pad)
-            contentEntity.addChild(emitter.entity!)
-            pads.append(pad)
+            contentEntity.addChild(pad.entity)
+            contentEntity.addChild(emitter.entity)
             
             i += 1
         }
@@ -50,16 +54,25 @@ class DrumsModel: ObservableObject {
     }
     
     func playSoundForPad(entity: Entity) {
-        if let emitter = getEmitterFromPadEntity(entity: entity) {
+        guard let (pad, emitter) = getPadAndEmitterFor(entity: entity) else { return }
+        
+        let now = Date().timeIntervalSince1970
+        if now - pad.lastTap > tapDelayRequiredSeconds {
+            pad.lastTap = now
             playSoundFrom(emitter)
         }
     }
     
-    func getEmitterFromPadEntity(entity: Entity) -> SoundEmitter? {
+    private func getPadAndEmitterFor(entity: Entity) -> (DrumPad, SoundEmitter)? {
         let padIdentifierTransform = entity.findEntity(named: "IdentifierTransform")
         
         guard let padIdentifier: String = padIdentifierTransform?.children[0].name else {
             print("No identifier found on tapped entity \(entity.name)")
+            return nil
+        }
+        
+        guard let pad = pads[padIdentifier] else {
+            print("No saved pad for identifier \(padIdentifier)")
             return nil
         }
         
@@ -68,10 +81,10 @@ class DrumsModel: ObservableObject {
             return nil
         }
         
-        return emitter
+        return (pad, emitter)
     }
     
-    func playSoundFrom(_ emitter: SoundEmitter) {
+    private func playSoundFrom(_ emitter: SoundEmitter) {
         guard let audioPlaybackController = emitter.audioPlaybackController else {
             print("No audio playback controller on emitter \(emitter.name)")
             return
@@ -84,20 +97,21 @@ class DrumsModel: ObservableObject {
         audioPlaybackController.play()
     }
     
-    private func linkPadToEmitter(pad: Entity, emitter: SoundEmitter, identifier: String) {
-        guard let padIdTransform = pad.findEntity(named: "MutableId") else {
-            print("No MutableId transform found on pad \(pad.name)")
+    private func linkPadToEmitter(pad: DrumPad, emitter: SoundEmitter, identifier: String) {
+        guard let padIdTransform = pad.entity.findEntity(named: "MutableId") else {
+            print("No MutableId transform found on pad \(pad.entity.name)")
             return
         }
         
-        guard let emitterIdTransform = emitter.entity?.findEntity(named: "MutableId") else {
-            print("No MutableId transform found on emitter entity \(emitter.entity?.name ?? "")")
+        guard let emitterIdTransform = emitter.entity.findEntity(named: "MutableId") else {
+            print("No MutableId transform found on emitter entity \(emitter.entity.name)")
             return
         }
 
         padIdTransform.name = identifier
         emitters[identifier] = emitter
-        emitterIdTransform.name = identifier // not used on this entity for now
+        emitterIdTransform.name = identifier
+        pads[identifier] = pad
     }
     
 //    private func setPadEmitterPairColor(pad: ModelEntity, emitter: SoundEmitter, color: RealityFoundation.Material.Color) {

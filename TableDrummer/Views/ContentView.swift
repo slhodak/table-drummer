@@ -24,7 +24,7 @@ struct ContentView: View {
                 VStack(alignment: .leading) {
                     Text("How to Play")
                         .font(.largeTitle)
-                    Text("1. Move the square pads into arm's reach with Eye Tracking + Pinch Gesture.")
+                    Text("1. Move the square pads into arm's reach with Eye Tracking + Pinch Gesture.\n\tFor best results move them onto a table with the bottom of the pad below the surface of the table.")
                     Text("2. Tap the pads with your index fingers to trigger sounds.")
                     Text("3. Each pad has a speaker. Move the speaker to move the source of the sound.")
                 }
@@ -55,7 +55,3 @@ struct ContentView: View {
         }
     }
 }
-
-//#Preview(windowStyle: .automatic) {
-//    ContentView()
-//}

@@ -11,14 +11,18 @@ import TableDrummerContent
 
 
 class DrumPad: ObservableObject {
-    static func create(for audioFileName: String) -> Entity? {
+    var name: String
+    var entity: Entity
+    var lastTap = Date().timeIntervalSince1970
+    
+    init?(name audioFileName: String) {
         do {
             let padEntity = try Entity.load(named: "Geometry/pad-tall", in: tableDrummerContentBundle)
             padEntity.scale = [0.05, 0.05, 0.025]
             padEntity.components.set(PadMarkerComponent(name: audioFileName))
             
-            return padEntity
-            
+            self.entity = padEntity
+            self.name = audioFileName
         } catch {
             print("Could not load pad \(audioFileName)")
             print(error.localizedDescription)

@@ -67,12 +67,6 @@ import RealityKit
             
             guard fingertip.isTracked else { continue }
             
-            /*
-             let originFromWrist = handAnchor.transform
-             let wristFromIndex = fingertip.rootTransform
-             let originFromIndex = originFromWrist * wristFromIndex
-             */
-            
             let originFromWrist = handAnchor.originFromAnchorTransform
             let wristFromIndex = fingertip.anchorFromJointTransform
             let originFromIndex = originFromWrist * wristFromIndex

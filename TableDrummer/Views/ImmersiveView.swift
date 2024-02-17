@@ -62,11 +62,9 @@ struct ImmersiveView: View {
     }
     
     private func handleCollisionBegan(_ ce: CollisionEvents.Began) {
-        guard ce.entityA.name.contains("Fingertip") || ce.entityB.name.contains("Fingertip") else { return }
-        
-        if ce.entityA.name.contains("Pad") {
+        if ce.entityA.name.contains("Pad") && ce.entityB.name.contains("Fingertip") {
             drumsModel.playSoundForPad(entity: ce.entityA)
-        }  else if ce.entityB.name.contains("Pad") {
+        } else if ce.entityA.name.contains("Fingertip") && ce.entityB.name.contains("Pad") {
             drumsModel.playSoundForPad(entity: ce.entityB)
         }
     }
