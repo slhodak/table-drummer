@@ -12,7 +12,7 @@ import TableDrummerContent
 
 class DrumsModel: ObservableObject {
     private var emitters: [String: SoundEmitter] = [:]
-    private var pads: [Entity] = []
+    var pads = [Entity]()
     
     let colors: [RealityFoundation.Material.Color] = [.blue, .red, .green, .yellow]
     let audioSamples: [String] = [
@@ -21,38 +21,32 @@ class DrumsModel: ObservableObject {
         "heavy-rock-closed-hi-hat",
         "heavy-rock-floor-tom"
     ]
+    private var contentEntity = Entity()
     
     func setupEntity() -> Entity {
-        let root = Entity()
         let spacing: Float = 0.22
         var i = 0
         let allPadsInitialWidth = spacing * Float(audioSamples.count - 1)
-        
-        var physicsSimulationComponent = PhysicsSimulationComponent()
-        physicsSimulationComponent.gravity = [0, 0, 0]
-        root.components.set(physicsSimulationComponent)
-        root.name = "root"
         
         for sampleName in audioSamples {
             // Only add pad and emitter if both can be made
             guard let pad = DrumPad.create(for: sampleName),
                   let emitter = SoundEmitter(for: sampleName) else { continue }
             
-            // todo set drumpad color
-            
+//            setPadEmitterPairColor(pad: pad, emitter: emitter, color: colors[i])
             linkPadToEmitter(pad: pad, emitter: emitter, identifier: sampleName)
             
-            pad.position = [(allPadsInitialWidth/2 * -1) + (spacing * Float(i)), 1, -1.0]
+            pad.position = [(allPadsInitialWidth/2 * -1) + (spacing * Float(i)), 1, -0.6]
             emitter.entity?.position = [pad.position[0], pad.position[1] + 0.25, pad.position[2]]
             
-            root.addChild(pad)
-            root.addChild(emitter.entity!)
+            contentEntity.addChild(pad)
+            contentEntity.addChild(emitter.entity!)
             pads.append(pad)
             
             i += 1
         }
         
-        return root
+        return contentEntity
     }
     
     func playSoundForPad(entity: Entity) {
@@ -100,9 +94,15 @@ class DrumsModel: ObservableObject {
             print("No MutableId transform found on emitter entity \(emitter.entity?.name ?? "")")
             return
         }
-        
+
         padIdTransform.name = identifier
         emitters[identifier] = emitter
         emitterIdTransform.name = identifier // not used on this entity for now
     }
+    
+//    private func setPadEmitterPairColor(pad: ModelEntity, emitter: SoundEmitter, color: RealityFoundation.Material.Color) {
+//        let colorMaterial = SimpleMaterial(color: color, roughness: 0.8, isMetallic: false)
+//        pad.model?.materials = [colorMaterial]
+//        emitter.entity?.model?.materials = [colorMaterial]
+//    }
 }

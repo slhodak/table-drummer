@@ -26,7 +26,7 @@
 		1756B4A72B75D75B00729672 /* punchy-acoustic-rock-snare-one-shot_F_major.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1756B49C2B75D71D00729672 /* punchy-acoustic-rock-snare-one-shot_F_major.wav */; };
 		1756B4A82B75D75D00729672 /* indie-rock-snare.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1756B49D2B75D71D00729672 /* indie-rock-snare.wav */; };
 		1756B4A92B75D76000729672 /* heavy-rock-closed-hi-hat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1756B4A02B75D71D00729672 /* heavy-rock-closed-hi-hat.wav */; };
-		1759BBAB2B7AB62B00B97F36 /* PlaneDetectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1759BBAA2B7AB62B00B97F36 /* PlaneDetectionModel.swift */; };
+		1759BBAB2B7AB62B00B97F36 /* ARSessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1759BBAA2B7AB62B00B97F36 /* ARSessionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +51,7 @@
 		1756B49C2B75D71D00729672 /* punchy-acoustic-rock-snare-one-shot_F_major.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "punchy-acoustic-rock-snare-one-shot_F_major.wav"; sourceTree = "<group>"; };
 		1756B49D2B75D71D00729672 /* indie-rock-snare.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "indie-rock-snare.wav"; sourceTree = "<group>"; };
 		1756B4A02B75D71D00729672 /* heavy-rock-closed-hi-hat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "heavy-rock-closed-hi-hat.wav"; sourceTree = "<group>"; };
-		1759BBAA2B7AB62B00B97F36 /* PlaneDetectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneDetectionModel.swift; sourceTree = "<group>"; };
+		1759BBAA2B7AB62B00B97F36 /* ARSessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSessionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +105,7 @@
 			children = (
 				174CC91E2B7432F0009B0C36 /* TableDrummerApp.swift */,
 				17071F032B7ED934009C1760 /* DrumsModel.swift */,
-				1759BBAA2B7AB62B00B97F36 /* PlaneDetectionModel.swift */,
+				1759BBAA2B7AB62B00B97F36 /* ARSessionModel.swift */,
 				17D6772E2B7A8DD000CAD649 /* Views */,
 				17D6772D2B7A8DBF00CAD649 /* Objects */,
 				174CC9242B7432F2009B0C36 /* Assets.xcassets */,
@@ -285,7 +285,7 @@
 				174CC91F2B7432F0009B0C36 /* TableDrummerApp.swift in Sources */,
 				174C08432B74BD6200AAC4FE /* DrumPad.swift in Sources */,
 				172F1A182B7593AD001F9B12 /* SoundEmitter.swift in Sources */,
-				1759BBAB2B7AB62B00B97F36 /* PlaneDetectionModel.swift in Sources */,
+				1759BBAB2B7AB62B00B97F36 /* ARSessionModel.swift in Sources */,
 				17071F042B7ED934009C1760 /* DrumsModel.swift in Sources */,
 				174CC9232B7432F0009B0C36 /* ImmersiveView.swift in Sources */,
 			);
@@ -429,7 +429,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.4;
+				MARKETING_VERSION = 1.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.samhodak.TableDrummer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
@@ -455,7 +455,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.4;
+				MARKETING_VERSION = 1.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.samhodak.TableDrummer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "xros xrsimulator";

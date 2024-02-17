@@ -1,0 +1,15 @@
+
+App Thinning Size Report for All Variants of TableDrummer
+
+Variant: TableDrummer-B0BA88CE-AC40-4053-9666-88D9441BC093.ipa
+Supported variant descriptors: [device: RealityDevice14,1, os-version: 1.0]
+App + On Demand Resources size: 7.8 MB compressed, 10.1 MB uncompressed
+App size: 7.8 MB compressed, 10.1 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: TableDrummer.ipa
+Supported variant descriptors: Universal
+App + On Demand Resources size: 7.8 MB compressed, 10.1 MB uncompressed
+App size: 7.8 MB compressed, 10.1 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed

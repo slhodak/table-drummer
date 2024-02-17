@@ -7,12 +7,16 @@
 
 import SwiftUI
 import RealityKit
+import TableDrummerContent
 import ARKit
 
 
 struct ImmersiveView: View {
-    let planeDetectionModel = PlaneDetectionModel()
-    let drumsModel = DrumsModel()
+    @State private var rootEntity: Entity?
+    
+    @StateObject var arSessionModel = ARSessionModel()
+    @StateObject var drumsModel = DrumsModel()
+    @State var collisionsSubscription: EventSubscription?
     
     @Binding var debugText: String
     var cannotDragElements: Bool
@@ -21,34 +25,37 @@ struct ImmersiveView: View {
     
     var body: some View {
         RealityView { content in
-            content.add(drumsModel.setupEntity())
-        } update: { content in
-           handleGravityToggle(content: content)
+            setupRootEntity()
+            guard let rootEntity = rootEntity else {
+                print("Missing root entity")
+                return
+            }
+            
+            rootEntity.addChild(drumsModel.setupEntity())
+            rootEntity.addChild(arSessionModel.setupContentEntity())
+            
+            collisionsSubscription = content.subscribe(to: CollisionEvents.Began.self) { ce in
+                self.handleCollisionBegan(ce)
+            }
+            
+            content.add(rootEntity)
         }
-//        .task {
-//            await planeDetectionModel.authorize()
-//        }
-//        .task {
-//            if planeDetectionModel.authorized {
-//                await planeDetectionModel.detectPlanes()
-//            }
-//        }
-//        .task {
-//            if planeDetectionModel.authorized {
-//                await planeDetectionModel.updatePlanes()
-//            }
-//        }
-        .gesture(SpatialTapGesture()
-            .targetedToAnyEntity()
-            .onEnded { value in
-                guard value.entity.name.contains("Pad") else { return }
-                
-                drumsModel.playSoundForPad(entity: value.entity)
-            })
+        .task {
+            await arSessionModel.runSession()
+        }
+        .task {
+            await arSessionModel.processHandUpdates()
+        }
+        .task {
+            await arSessionModel.processReconstructionUpdates()
+        }
+        .onDisappear() {
+            rootEntity = nil
+        }
         .gesture(DragGesture()
             .targetedToAnyEntity()
             .onChanged { value in
-                if value.entity.name.contains("Pad") &&
+                if value.entity.components[PadMarkerComponent.self] != nil &&
                     cannotDragElements == true {
                     return
                 }
@@ -59,19 +66,42 @@ struct ImmersiveView: View {
             })
     }
     
+    private func setupRootEntity() {
+        rootEntity = Entity()
+        guard let rootEntity = rootEntity else { return }
+        
+        var physicsSimulationComponent = PhysicsSimulationComponent()
+        physicsSimulationComponent.gravity = [0, 0, 0]
+        rootEntity.components.set(physicsSimulationComponent)
+        rootEntity.name = "root"
+    }
+    
+    private func handleCollisionBegan(_ ce: CollisionEvents.Began) {
+        guard ce.entityA.name.contains("Fingertip") || ce.entityB.name.contains("Fingertip") else { return }
+        
+        if ce.entityA.name.contains("Pad") {
+            drumsModel.playSoundForPad(entity: ce.entityA)
+        }  else if ce.entityB.name.contains("Pad") {
+            drumsModel.playSoundForPad(entity: ce.entityB)
+        }
+    }
+    
     private func handleGravityToggle(content: RealityViewContent) {
         let root = content.entities[0]
+        let padsQuery = EntityQuery(where: .has(PadMarkerComponent.self))
+        
         if gravityIsEnabled {
             root.components[PhysicsSimulationComponent.self]?.gravity = gravity
+
+            root.scene?.performQuery(padsQuery).forEach { entity in
+                entity.components[PhysicsBodyComponent.self]?.mode = .dynamic
+            }
+            
         } else {
             root.components[PhysicsSimulationComponent.self]?.gravity = [0, 0, 0]
             
-            // Reset pad physics body components to halt falling
-            let physicsQuery = EntityQuery(where: .has(PhysicsBodyComponent.self))
-            root.scene?.performQuery(physicsQuery).forEach { entity in
-                // may want to alter this so it only affects pads, because planes may also need physics body components and its just unnecessary to replace them since they won't be affected by gravity (and could cause unexpected behavior)
-                entity.components.remove(PhysicsBodyComponent.self)
-                entity.components.set(PhysicsBodyComponent())
+            root.scene?.performQuery(padsQuery).forEach { entity in
+                entity.components[PhysicsBodyComponent.self]?.mode = .static
             }
         }
     }

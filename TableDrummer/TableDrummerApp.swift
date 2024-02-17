@@ -18,6 +18,10 @@ struct TableDrummerApp: App {
     
     private var windowHeight = 0.3
     
+    init() {
+        PadMarkerComponent.registerComponent()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView(debugText: debugText,

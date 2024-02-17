@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>TableDrummer.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>buildNumber</key>
+			<string>1</string>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>0E669DAC75A582EB87B0ABE00B80E3C18755082B</string>
+				<key>dateExpires</key>
+				<string>11/6/24</string>
+				<key>type</key>
+				<string>Apple Development</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>D3D2BJZUS3.com.samhodak.TableDrummer</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>D3D2BJZUS3</string>
+				<key>get-task-allow</key>
+				<true/>
+			</dict>
+			<key>name</key>
+			<string>TableDrummer.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>6b5c05e0-47d9-4995-a58d-56f586eb4efc</string>
+				<key>dateExpires</key>
+				<string>2/15/25</string>
+				<key>name</key>
+				<string>iOS Team Provisioning Profile: com.samhodak.TableDrummer</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>D3D2BJZUS3</string>
+				<key>name</key>
+				<string>Sam Hodak</string>
+			</dict>
+			<key>versionNumber</key>
+			<string>1.3.5</string>
+		</dict>
+	</array>
+</dict>
+</plist>
