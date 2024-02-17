@@ -14,9 +14,7 @@ import RealityKit
 @MainActor class ARSessionModel: ObservableObject {
     private let arSession = ARKitSession()
     private let handTracking = HandTrackingProvider()
-    private let sceneReconstruction = SceneReconstructionProvider()
     
-    private var meshEntities = [UUID: ModelEntity]()
     private let fingerEntities: [HandAnchor.Chirality: ModelEntity] = [
         .left: .createFingertip("leftFingertip"),
         .right: .createFingertip("rightFingertip")
@@ -33,7 +31,7 @@ import RealityKit
     }
     
     func authorize() async {
-        let authorizationResult = await arSession.requestAuthorization(for: [.worldSensing, .handTracking])
+        let authorizationResult = await arSession.requestAuthorization(for: [.handTracking])
         
         for (authorizationType, authorizationStatus) in authorizationResult {
             print("Authorization status for \(authorizationType): \(authorizationStatus)")
@@ -51,7 +49,7 @@ import RealityKit
     func runSession() async {
         do {
             await authorize()
-            try await arSession.run([sceneReconstruction, handTracking])
+            try await arSession.run([handTracking])
         } catch {
             print("Error running session")
             print(error.localizedDescription)
@@ -82,41 +80,6 @@ import RealityKit
             fingerEntities[handAnchor.chirality]?.setTransformMatrix(originFromIndex, relativeTo: nil)
         }
     }
-    
-    func processReconstructionUpdates() async {
-        for await update in sceneReconstruction.anchorUpdates {
-            let meshAnchor = update.anchor
-            
-            guard let shape = try? await ShapeResource.generateStaticMesh(from: meshAnchor) else { continue }
-            
-            switch update .event {
-            case .added:
-                let entity = createSceneMeshEntity(meshAnchor, shape)
-                meshEntities[meshAnchor.id] = entity
-                contentEntity.addChild(entity)
-            case .updated:
-                guard let entity = meshEntities[meshAnchor.id] else {
-                    print("Update received for nonexistent meshAnchor")
-                    continue
-                }
-                
-                entity.transform = Transform(matrix: meshAnchor.originFromAnchorTransform)
-                entity.collision?.shapes = [shape]
-            case .removed:
-                meshEntities[meshAnchor.id]?.removeFromParent()
-                meshEntities.removeValue(forKey: meshAnchor.id)
-            }
-        }
-    }
-    
-    private func createSceneMeshEntity(_ meshAnchor: MeshAnchor, _ shape: ShapeResource) -> ModelEntity {
-        let entity = ModelEntity()
-        entity.transform = Transform(matrix: meshAnchor.originFromAnchorTransform)
-        entity.collision = CollisionComponent(shapes: [shape], isStatic: true)
-        entity.physicsBody = PhysicsBodyComponent()
-        
-        return entity
-    }
 }
 
 
@@ -130,7 +93,7 @@ extension ModelEntity {
         
         entity.name = name
         entity.components.set(PhysicsBodyComponent(mode: .kinematic))
-//        entity.components.set(OpacityComponent(opacity: 1.0))
+        entity.components.set(OpacityComponent(opacity: 0.0))
         
         return entity
     }

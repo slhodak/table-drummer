@@ -24,16 +24,12 @@ struct TableDrummerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(debugText: debugText,
-                        cannotDragElements: $cannotDragElements,
-                        gravityIsEnabled: $gravityIsEnabled)
+            ContentView(debugText: debugText)
         }
         .defaultSize(width: windowHeight * goldenRatio, height: windowHeight, depth: 0.02, in: .meters)
         
         ImmersiveSpace(id: "ImmersiveSpace") {
-            ImmersiveView(debugText: $debugText,
-                          cannotDragElements: cannotDragElements,
-                          gravityIsEnabled: gravityIsEnabled)
+            ImmersiveView(debugText: $debugText)
         }
     }
 }
