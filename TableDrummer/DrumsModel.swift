@@ -16,7 +16,7 @@ class DrumsModel: ObservableObject {
     private var pads = [String: DrumPad]()
     private let tapDelayRequiredSeconds = 0.1
     
-    let colors: [RealityFoundation.Material.Color] = [.blue, .red, .green, .yellow]
+    let colors: [RealityFoundation.Material.Color] = [.blue, .green, .yellow, .red]
     let audioSamples: [String] = [
         "rock-kick-2",
         "indie-rock-snare",
@@ -34,7 +34,7 @@ class DrumsModel: ObservableObject {
             guard let pad = DrumPad(name: sampleName),
                   let emitter = SoundEmitter(name: sampleName) else { continue }
             
-//            setPadEmitterPairColor(pad: pad, emitter: emitter, color: colors[i])
+            setPadEmitterPairColor(pad: pad, emitter: emitter, color: colors[i])
             linkPadToEmitter(pad: pad, emitter: emitter, identifier: sampleName)
             
             pad.entity.position = [(allPadsInitialWidth/2 * -1) + (spacing * Float(i)), 1, -0.6]
@@ -114,9 +114,15 @@ class DrumsModel: ObservableObject {
         pads[identifier] = pad
     }
     
-//    private func setPadEmitterPairColor(pad: ModelEntity, emitter: SoundEmitter, color: RealityFoundation.Material.Color) {
-//        let colorMaterial = SimpleMaterial(color: color, roughness: 0.8, isMetallic: false)
-//        pad.model?.materials = [colorMaterial]
-//        emitter.entity?.model?.materials = [colorMaterial]
-//    }
+    private func setPadEmitterPairColor(pad: DrumPad, emitter: SoundEmitter, color: RealityFoundation.Material.Color) {
+        guard let emitterStripesModelEntity = emitter.entity.findEntity(named: "EmitterStripesMesh") as? ModelEntity,
+              let padCornersModelEntity = pad.entity.findEntity(named: "PadCornersMesh") as? ModelEntity else {
+            print("Could not find stripes and corners entities")
+            return
+        }
+        
+        let colorMaterial = SimpleMaterial(color: color, roughness: 0.7, isMetallic: false)
+        emitterStripesModelEntity.model?.materials = [colorMaterial]
+        padCornersModelEntity.model?.materials = [colorMaterial]
+    }
 }

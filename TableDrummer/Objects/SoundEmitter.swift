@@ -26,7 +26,6 @@ class SoundEmitter {
             let resource = try AudioFileResource.load(named: audioFileName)
             
             emitterEntity.scale = [0.05, 0.05, 0.05]
-            emitterEntity.name = "\(audioFileName)_emitter"
             
             self.name = audioFileName
             self.entity = emitterEntity
