@@ -17,15 +17,15 @@ class DrumsModel: ObservableObject {
     private let tapDelayRequiredSeconds = 0.1
     
     let audioSamples: [String: RealityFoundation.Material.Color] = [
-        "rock-kick-2": .red,
-        "indie-rock-snare": .green,
-        "heavy-rock-closed-hi-hat": .yellow,
-        "heavy-rock-tom": .blue,
-        "heavy-rock-tom-2": .blue,
-        "heavy-rock-tom-3": .blue,
-        "heavy-rock-floor-tom": .blue,
-        "heavy-rock-ride": .yellow,
-        "golden-crash": .yellow,
+        "rock-kick-2": TDColor.a,
+        "indie-rock-snare": TDColor.b,
+        "heavy-rock-closed-hi-hat": TDColor.c,
+        "heavy-rock-tom": TDColor.d,
+        "heavy-rock-tom-2": TDColor.e,
+        "heavy-rock-tom-3": TDColor.f,
+        "heavy-rock-floor-tom": TDColor.g,
+        "heavy-rock-ride": TDColor.h,
+        "golden-crash": TDColor.i,
     ]
     
     func setupEntity() -> Entity {
@@ -124,7 +124,6 @@ class DrumsModel: ObservableObject {
             print("Could not find stripes and corners entities")
             return
         }
-        
         let colorMaterial = SimpleMaterial(color: color, roughness: 0.7, isMetallic: false)
         emitterStripesModelEntity.model?.materials = [colorMaterial]
         padCornersModelEntity.model?.materials = [colorMaterial]

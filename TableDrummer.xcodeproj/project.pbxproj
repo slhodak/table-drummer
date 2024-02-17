@@ -30,6 +30,7 @@
 		17FFA9CE2B814AE2002D76CC /* rock-ride-tip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 17FFA9CD2B814AE2002D76CC /* rock-ride-tip.wav */; };
 		17FFA9D02B814AF4002D76CC /* golden-crash.wav in Resources */ = {isa = PBXBuildFile; fileRef = 17FFA9CF2B814AF4002D76CC /* golden-crash.wav */; };
 		17FFA9D22B814C9B002D76CC /* heavy-rock-ride.wav in Resources */ = {isa = PBXBuildFile; fileRef = 17FFA9D12B814C9B002D76CC /* heavy-rock-ride.wav */; };
+		17FFA9D42B81504A002D76CC /* TDColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FFA9D32B81504A002D76CC /* TDColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		17FFA9CD2B814AE2002D76CC /* rock-ride-tip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "rock-ride-tip.wav"; sourceTree = "<group>"; };
 		17FFA9CF2B814AF4002D76CC /* golden-crash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "golden-crash.wav"; sourceTree = "<group>"; };
 		17FFA9D12B814C9B002D76CC /* heavy-rock-ride.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "heavy-rock-ride.wav"; sourceTree = "<group>"; };
+		17FFA9D32B81504A002D76CC /* TDColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 			children = (
 				174C08422B74BD6200AAC4FE /* DrumPad.swift */,
 				172F1A172B7593AD001F9B12 /* SoundEmitter.swift */,
+				17FFA9D32B81504A002D76CC /* TDColor.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				172F19972B754E67001F9B12 /* DebugView.swift in Sources */,
+				17FFA9D42B81504A002D76CC /* TDColor.swift in Sources */,
 				174CC9212B7432F0009B0C36 /* ContentView.swift in Sources */,
 				174CC91F2B7432F0009B0C36 /* TableDrummerApp.swift in Sources */,
 				174C08432B74BD6200AAC4FE /* DrumPad.swift in Sources */,
