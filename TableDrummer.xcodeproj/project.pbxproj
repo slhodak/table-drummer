@@ -27,6 +27,9 @@
 		1756B4A82B75D75D00729672 /* indie-rock-snare.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1756B49D2B75D71D00729672 /* indie-rock-snare.wav */; };
 		1756B4A92B75D76000729672 /* heavy-rock-closed-hi-hat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1756B4A02B75D71D00729672 /* heavy-rock-closed-hi-hat.wav */; };
 		1759BBAB2B7AB62B00B97F36 /* ARSessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1759BBAA2B7AB62B00B97F36 /* ARSessionModel.swift */; };
+		17FFA9CE2B814AE2002D76CC /* rock-ride-tip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 17FFA9CD2B814AE2002D76CC /* rock-ride-tip.wav */; };
+		17FFA9D02B814AF4002D76CC /* golden-crash.wav in Resources */ = {isa = PBXBuildFile; fileRef = 17FFA9CF2B814AF4002D76CC /* golden-crash.wav */; };
+		17FFA9D22B814C9B002D76CC /* heavy-rock-ride.wav in Resources */ = {isa = PBXBuildFile; fileRef = 17FFA9D12B814C9B002D76CC /* heavy-rock-ride.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		1756B49D2B75D71D00729672 /* indie-rock-snare.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "indie-rock-snare.wav"; sourceTree = "<group>"; };
 		1756B4A02B75D71D00729672 /* heavy-rock-closed-hi-hat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "heavy-rock-closed-hi-hat.wav"; sourceTree = "<group>"; };
 		1759BBAA2B7AB62B00B97F36 /* ARSessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSessionModel.swift; sourceTree = "<group>"; };
+		17FFA9CD2B814AE2002D76CC /* rock-ride-tip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "rock-ride-tip.wav"; sourceTree = "<group>"; };
+		17FFA9CF2B814AF4002D76CC /* golden-crash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "golden-crash.wav"; sourceTree = "<group>"; };
+		17FFA9D12B814C9B002D76CC /* heavy-rock-ride.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "heavy-rock-ride.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +143,7 @@
 				1756B4932B75D71D00729672 /* Kick */,
 				1756B4962B75D71D00729672 /* Tom */,
 				1756B49B2B75D71D00729672 /* Snare */,
-				1756B49F2B75D71D00729672 /* Hat */,
+				1756B49F2B75D71D00729672 /* Cymbal */,
 			);
 			path = Samples;
 			sourceTree = "<group>";
@@ -171,12 +177,15 @@
 			path = Snare;
 			sourceTree = "<group>";
 		};
-		1756B49F2B75D71D00729672 /* Hat */ = {
+		1756B49F2B75D71D00729672 /* Cymbal */ = {
 			isa = PBXGroup;
 			children = (
+				17FFA9CF2B814AF4002D76CC /* golden-crash.wav */,
+				17FFA9D12B814C9B002D76CC /* heavy-rock-ride.wav */,
+				17FFA9CD2B814AE2002D76CC /* rock-ride-tip.wav */,
 				1756B4A02B75D71D00729672 /* heavy-rock-closed-hi-hat.wav */,
 			);
-			path = Hat;
+			path = Cymbal;
 			sourceTree = "<group>";
 		};
 		17D6772D2B7A8DBF00CAD649 /* Objects */ = {
@@ -262,14 +271,17 @@
 				174CC9282B7432F2009B0C36 /* Preview Assets.xcassets in Resources */,
 				174CC9252B7432F2009B0C36 /* Assets.xcassets in Resources */,
 				1756B4A12B75D74400729672 /* rock-kick-2.wav in Resources */,
+				17FFA9CE2B814AE2002D76CC /* rock-ride-tip.wav in Resources */,
 				1756B4A22B75D74800729672 /* rock-kick_140bpm_C.wav in Resources */,
 				1756B4A32B75D74C00729672 /* heavy-rock-tom.wav in Resources */,
 				1756B4A52B75D75600729672 /* heavy-rock-tom-2.wav in Resources */,
+				17FFA9D02B814AF4002D76CC /* golden-crash.wav in Resources */,
 				1756B4A42B75D75400729672 /* heavy-rock-tom-3.wav in Resources */,
 				1756B4A62B75D75900729672 /* heavy-rock-floor-tom.wav in Resources */,
 				1756B4A72B75D75B00729672 /* punchy-acoustic-rock-snare-one-shot_F_major.wav in Resources */,
 				1756B4A82B75D75D00729672 /* indie-rock-snare.wav in Resources */,
 				1756B4A92B75D76000729672 /* heavy-rock-closed-hi-hat.wav in Resources */,
+				17FFA9D22B814C9B002D76CC /* heavy-rock-ride.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

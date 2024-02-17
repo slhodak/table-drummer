@@ -16,28 +16,32 @@ class DrumsModel: ObservableObject {
     private var pads = [String: DrumPad]()
     private let tapDelayRequiredSeconds = 0.1
     
-    let colors: [RealityFoundation.Material.Color] = [.blue, .green, .yellow, .red]
-    let audioSamples: [String] = [
-        "rock-kick-2",
-        "indie-rock-snare",
-        "heavy-rock-closed-hi-hat",
-        "heavy-rock-floor-tom"
+    let audioSamples: [String: RealityFoundation.Material.Color] = [
+        "rock-kick-2": .red,
+        "indie-rock-snare": .green,
+        "heavy-rock-closed-hi-hat": .yellow,
+        "heavy-rock-tom": .blue,
+        "heavy-rock-tom-2": .blue,
+        "heavy-rock-tom-3": .blue,
+        "heavy-rock-floor-tom": .blue,
+        "heavy-rock-ride": .yellow,
+        "golden-crash": .yellow,
     ]
     
     func setupEntity() -> Entity {
-        let spacing: Float = 0.22
+        let spacing: Float = 0.16
         var i = 0
         let allPadsInitialWidth = spacing * Float(audioSamples.count - 1)
         
-        for sampleName in audioSamples {
+        for (sampleName, color) in audioSamples {
             // Only add pad and emitter if both can be made
             guard let pad = DrumPad(name: sampleName),
                   let emitter = SoundEmitter(name: sampleName) else { continue }
             
-            setPadEmitterPairColor(pad: pad, emitter: emitter, color: colors[i])
+            setPadEmitterPairColor(pad: pad, emitter: emitter, color: color)
             linkPadToEmitter(pad: pad, emitter: emitter, identifier: sampleName)
             
-            pad.entity.position = [(allPadsInitialWidth/2 * -1) + (spacing * Float(i)), 1, -0.6]
+            pad.entity.position = [(allPadsInitialWidth/2 * -1) + (spacing * Float(i)), 1, -0.5]
             emitter.entity.position = [
                 pad.entity.position[0],
                 pad.entity.position[1] + 0.25,
