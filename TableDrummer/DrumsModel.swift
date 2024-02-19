@@ -35,13 +35,13 @@ class DrumsModel: ObservableObject {
     ]
     
     func setupEntity() -> Entity {
-        let padSpacing: Float = 0.2
+        let padSpacing: Float = 0.11
         let totalWidth: Float = 1.0
         let leftmostParentX = totalWidth/2 * -1
         let parentSpacing: Float = totalWidth/Float(audioSamples.count)
         var i = 0
         
-        for (sampleType, sampleSet) in audioSamples {
+        for (_, sampleSet) in audioSamples {
             guard  let firstSample = sampleSet.first else {
                 print("Error getting the first element in the Sets:Samples:Colors dict")
                 continue
@@ -51,7 +51,7 @@ class DrumsModel: ObservableObject {
             let (_, parentsColor) = firstSample
             let parentX = leftmostParentX + parentSpacing * Float(i+1)
             
-            let parentPosition = SIMD3<Float>(parentX, 0.75, -0.5)
+            let parentPosition = SIMD3<Float>(parentX, 1.0, -0.5)
             let (padsParent, emittersParent) = createPadAndEmitterParents(position: parentPosition, color: parentsColor)
             
             let padSetWidth = padSpacing * Float(sampleSet.count - 1)
@@ -66,10 +66,11 @@ class DrumsModel: ObservableObject {
                 linkPadToEmitter(pad: pad, emitter: emitter, identifier: sampleName)
                 
                 let padX = (padSetWidth/2 * -1) + (padSpacing * Float(j))
+                let padYOffset: Float = 0.175
                 let padZ: Float = 0.1
-                pad.entity.position = [padX, -0.1, padZ]
                 
-                emitter.entity.position = [padX, 0.1, padZ]
+                pad.entity.position = [padX, padYOffset * -1, padZ]
+                emitter.entity.position = [padX, padYOffset, padZ]
                 
                 padsParent.addChild(pad.entity)
                 emittersParent.addChild(emitter.entity)
@@ -140,7 +141,7 @@ class DrumsModel: ObservableObject {
             print("No MutableId transform found on emitter entity \(emitter.entity.name)")
             return
         }
-
+        
         padIdTransform.name = identifier
         emitters[identifier] = emitter
         emitterIdTransform.name = identifier
@@ -154,24 +155,18 @@ class DrumsModel: ObservableObject {
             return
         }
         
-        padCornersModelEntity.model?.materials = [getPadColorMaterial(color: color)]
-        emitterStripesModelEntity.model?.materials = [getEmitterColorMaterial(color: color)]
+        padCornersModelEntity.model?.materials = [DrumsModel.getMatteMaterial(color: color)]
+        emitterStripesModelEntity.model?.materials = [DrumsModel.getMetallicMaterial(color: color)]
     }
     
     private func createPadAndEmitterParents(position: SIMD3<Float>, color: RealityFoundation.Material.Color) -> (ModelEntity, ModelEntity) {
-        let parentSphereRadius: Float = 0.04
+        let parentSphereRadius: Float = 0.03
         
-        let padsParent = ModelEntity(mesh: .generateSphere(radius: parentSphereRadius),
-                                     materials: [getPadColorMaterial(color: color)],
-                                     collisionShape: .generateSphere(radius: parentSphereRadius),
-                                     mass: 0.0)
+        let padsParent = DrumsModel.createOrb(radius: parentSphereRadius, color: color, isMetallic: false)
         padsParent.components.set(PhysicsBodyComponent(mode: .kinematic))
         padsParent.components.set(InputTargetComponent(allowedInputTypes: .indirect))
         
-        let emittersParent = ModelEntity(mesh: .generateSphere(radius: parentSphereRadius),
-                                         materials: [getEmitterColorMaterial(color: color)],
-                                         collisionShape: .generateSphere(radius: parentSphereRadius),
-                                         mass: 0.0)
+        let emittersParent = DrumsModel.createOrb(radius: parentSphereRadius, color: color, isMetallic: true)
         emittersParent.components.set(PhysicsBodyComponent(mode: .kinematic))
         emittersParent.components.set(InputTargetComponent(allowedInputTypes: .indirect))
         
@@ -184,11 +179,19 @@ class DrumsModel: ObservableObject {
         return (padsParent, emittersParent)
     }
     
-    private func getPadColorMaterial(color: RealityFoundation.Material.Color) -> SimpleMaterial {
+    static func createOrb(radius: Float, color: RealityFoundation.Material.Color, isMetallic: Bool) -> ModelEntity {
+        let orbMaterial = isMetallic ? getMetallicMaterial(color: color) : getMatteMaterial(color: color)
+        return ModelEntity(mesh: .generateSphere(radius: radius),
+                           materials: [orbMaterial],
+                           collisionShape: .generateSphere(radius: radius),
+                           mass: 0.0)
+    }
+    
+    static func getMatteMaterial(color: RealityFoundation.Material.Color) -> SimpleMaterial {
         SimpleMaterial(color: color, roughness: 0.75, isMetallic: false)
     }
     
-    private func getEmitterColorMaterial(color: RealityFoundation.Material.Color) -> SimpleMaterial {
+    static func getMetallicMaterial(color: RealityFoundation.Material.Color) -> SimpleMaterial {
         SimpleMaterial(color: color, roughness: 0.25, isMetallic: true)
     }
 }

@@ -7,6 +7,8 @@
 
 import SwiftUI
 import RealityKit
+import TableDrummerContent
+
 
 struct ContentView: View {
     var debugText: String
@@ -19,20 +21,25 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-//            DebugView(debugText: debugText)
             if !immersiveSpaceIsShown {
                 VStack(alignment: .leading) {
                     Text("How to Play")
                         .font(.largeTitle)
-                    Text("1. Move the square pads into arm's reach with Eye Tracking + Pinch Gesture.\n\tFor best results move them onto a table with the bottom of the pad below the surface of the table.")
-                    Text("2. Tap the pads with your index fingers to trigger sounds.")
-                    Text("3. Each pad has a speaker. Move the speaker to move the source of the sound.")
+                    
+                    ElementsView()
+                    
+                    Text("1. Tap a pad to produce sound from its associated speaker.")
+                    Text("2. Pads and speakers can all be moved.")
+                    Text("3. Pad groups can be moved by their associated matte orb.")
+                    Text("4. Speaker groups can be moved by their associated metallic orb.")
+                    Text("\nTry placing the pads on a table and tapping the table. Have fun!")
                 }
+                .padding()
             }
             
             Toggle(immersiveSpaceIsShown ? "Stop": "Start", isOn: $showImmersiveSpace)
                 .toggleStyle(.button)
-                .padding(.top, 50)
+                .padding()
         }
         .padding()
         .onChange(of: showImmersiveSpace) { _, newValue in

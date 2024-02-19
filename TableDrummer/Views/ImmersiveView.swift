@@ -38,10 +38,10 @@ struct ImmersiveView: View {
             content.add(rootEntity)
         }
         .task {
+            #if !targetEnvironment(simulator)
             await arSessionModel.runSession()
-        }
-        .task {
             await arSessionModel.processHandUpdates()
+            #endif
         }
         .onDisappear() {
             rootEntity = nil
