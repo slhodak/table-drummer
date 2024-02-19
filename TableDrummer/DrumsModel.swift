@@ -16,40 +16,69 @@ class DrumsModel: ObservableObject {
     private var pads = [String: DrumPad]()
     private let tapDelayRequiredSeconds = 0.1
     
-    let audioSamples: [String: RealityFoundation.Material.Color] = [
-        "rock-kick-2": TDColor.a,
-        "indie-rock-snare": TDColor.b,
-        "heavy-rock-closed-hi-hat": TDColor.c,
-        "heavy-rock-tom": TDColor.d,
-        "heavy-rock-tom-2": TDColor.e,
-        "heavy-rock-tom-3": TDColor.f,
-        "heavy-rock-floor-tom": TDColor.g,
-        "heavy-rock-ride": TDColor.h,
-        "golden-crash": TDColor.i,
+    let audioSamples: [String: [String: RealityFoundation.Material.Color]] = [
+        "core": [
+            "rock-kick-2": TDColor.a,
+            "indie-rock-snare": TDColor.b,
+            "heavy-rock-closed-hi-hat": TDColor.c,
+        ],
+        "toms": [
+            "heavy-rock-tom": TDColor.d,
+            "heavy-rock-tom-2": TDColor.e,
+            "heavy-rock-tom-3": TDColor.f,
+            "heavy-rock-floor-tom": TDColor.g,
+        ],
+        "cymbals": [
+            "heavy-rock-ride": TDColor.h,
+            "golden-crash": TDColor.i,
+        ]
     ]
     
     func setupEntity() -> Entity {
-        let spacing: Float = 0.16
+        let padSpacing: Float = 0.2
+        let totalWidth: Float = 1.0
+        let leftmostParentX = totalWidth/2 * -1
+        let parentSpacing: Float = totalWidth/Float(audioSamples.count)
         var i = 0
-        let allPadsInitialWidth = spacing * Float(audioSamples.count - 1)
         
-        for (sampleName, color) in audioSamples {
-            // Only add pad and emitter if both can be made
-            guard let pad = DrumPad(name: sampleName),
-                  let emitter = SoundEmitter(name: sampleName) else { continue }
+        for (sampleType, sampleSet) in audioSamples {
+            guard  let firstSample = sampleSet.first else {
+                print("Error getting the first element in the Sets:Samples:Colors dict")
+                continue
+            }
             
-            setPadEmitterPairColor(pad: pad, emitter: emitter, color: color)
-            linkPadToEmitter(pad: pad, emitter: emitter, identifier: sampleName)
+            // Create + place parent orbs
+            let (_, parentsColor) = firstSample
+            let parentX = leftmostParentX + parentSpacing * Float(i+1)
             
-            pad.entity.position = [(allPadsInitialWidth/2 * -1) + (spacing * Float(i)), 1, -0.5]
-            emitter.entity.position = [
-                pad.entity.position[0],
-                pad.entity.position[1] + 0.25,
-                pad.entity.position[2]
-            ]
+            let parentPosition = SIMD3<Float>(parentX, 0.75, -0.5)
+            let (padsParent, emittersParent) = createPadAndEmitterParents(position: parentPosition, color: parentsColor)
             
-            contentEntity.addChild(pad.entity)
-            contentEntity.addChild(emitter.entity)
+            let padSetWidth = padSpacing * Float(sampleSet.count - 1)
+            var j = 0
+            
+            for (sampleName, color) in sampleSet {
+                // Only add pad and emitter if both can be made
+                guard let pad = DrumPad(name: sampleName),
+                      let emitter = SoundEmitter(name: sampleName) else { continue }
+                
+                setPadEmitterPairColor(pad: pad, emitter: emitter, color: color)
+                linkPadToEmitter(pad: pad, emitter: emitter, identifier: sampleName)
+                
+                let padX = (padSetWidth/2 * -1) + (padSpacing * Float(j))
+                let padZ: Float = 0.1
+                pad.entity.position = [padX, -0.1, padZ]
+                
+                emitter.entity.position = [padX, 0.1, padZ]
+                
+                padsParent.addChild(pad.entity)
+                emittersParent.addChild(emitter.entity)
+                
+                j += 1
+            }
+            
+            contentEntity.addChild(padsParent)
+            contentEntity.addChild(emittersParent)
             
             i += 1
         }
@@ -124,8 +153,42 @@ class DrumsModel: ObservableObject {
             print("Could not find stripes and corners entities")
             return
         }
-        let colorMaterial = SimpleMaterial(color: color, roughness: 0.7, isMetallic: false)
-        emitterStripesModelEntity.model?.materials = [colorMaterial]
-        padCornersModelEntity.model?.materials = [colorMaterial]
+        
+        padCornersModelEntity.model?.materials = [getPadColorMaterial(color: color)]
+        emitterStripesModelEntity.model?.materials = [getEmitterColorMaterial(color: color)]
+    }
+    
+    private func createPadAndEmitterParents(position: SIMD3<Float>, color: RealityFoundation.Material.Color) -> (ModelEntity, ModelEntity) {
+        let parentSphereRadius: Float = 0.04
+        
+        let padsParent = ModelEntity(mesh: .generateSphere(radius: parentSphereRadius),
+                                     materials: [getPadColorMaterial(color: color)],
+                                     collisionShape: .generateSphere(radius: parentSphereRadius),
+                                     mass: 0.0)
+        padsParent.components.set(PhysicsBodyComponent(mode: .kinematic))
+        padsParent.components.set(InputTargetComponent(allowedInputTypes: .indirect))
+        
+        let emittersParent = ModelEntity(mesh: .generateSphere(radius: parentSphereRadius),
+                                         materials: [getEmitterColorMaterial(color: color)],
+                                         collisionShape: .generateSphere(radius: parentSphereRadius),
+                                         mass: 0.0)
+        emittersParent.components.set(PhysicsBodyComponent(mode: .kinematic))
+        emittersParent.components.set(InputTargetComponent(allowedInputTypes: .indirect))
+        
+        let yOffset = parentSphereRadius * 1.05
+        padsParent.position = position
+        padsParent.position.y -= yOffset
+        emittersParent.position = position
+        emittersParent.position.y += yOffset
+        
+        return (padsParent, emittersParent)
+    }
+    
+    private func getPadColorMaterial(color: RealityFoundation.Material.Color) -> SimpleMaterial {
+        SimpleMaterial(color: color, roughness: 0.75, isMetallic: false)
+    }
+    
+    private func getEmitterColorMaterial(color: RealityFoundation.Material.Color) -> SimpleMaterial {
+        SimpleMaterial(color: color, roughness: 0.25, isMetallic: true)
     }
 }
