@@ -53,6 +53,13 @@ struct ImmersiveView: View {
                                                       from: .local,
                                                       to: value.entity.parent!)
             })
+        .gesture(RotateGesture()
+            .targetedToAnyEntity()
+            .onChanged { value in
+                print(value.rotation)
+                let radians = Float(value.rotation.radians)
+                value.entity.orientation = simd_quatf(angle: radians, axis: [0, 1, 0])
+            })
     }
     
     private func setupRootEntity() {

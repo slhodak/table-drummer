@@ -101,6 +101,8 @@ def Xform "EmitterTransform"
 
     def RealityKitComponent "InputTarget"
     {
+        bool allowsDirectInput = 0
+        bool allowsIndirectInput = 1
         uniform token info:id = "RealityKit.InputTarget"
     }
 
