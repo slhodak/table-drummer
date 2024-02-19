@@ -57,7 +57,6 @@
 		1756B49D2B75D71D00729672 /* indie-rock-snare.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "indie-rock-snare.wav"; sourceTree = "<group>"; };
 		1756B4A02B75D71D00729672 /* heavy-rock-closed-hi-hat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "heavy-rock-closed-hi-hat.wav"; sourceTree = "<group>"; };
 		1759BBAA2B7AB62B00B97F36 /* ARSessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSessionModel.swift; sourceTree = "<group>"; };
-		175A68CA2B8414930006BE1C /* pad-tall.usda */ = {isa = PBXFileReference; lastKnownFileType = text; path = "pad-tall.usda"; sourceTree = "<group>"; };
 		175A68CC2B8416DF0006BE1C /* ElementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsView.swift; sourceTree = "<group>"; };
 		17FFA9CD2B814AE2002D76CC /* rock-ride-tip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "rock-ride-tip.wav"; sourceTree = "<group>"; };
 		17FFA9CF2B814AF4002D76CC /* golden-crash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "golden-crash.wav"; sourceTree = "<group>"; };
@@ -95,7 +94,6 @@
 		174CC90E2B7432F0009B0C36 = {
 			isa = PBXGroup;
 			children = (
-				175A68CA2B8414930006BE1C /* pad-tall.usda */,
 				1756B48F2B75D6DC00729672 /* Audio */,
 				174CC9192B7432F0009B0C36 /* TableDrummer */,
 				172F199B2B755BEE001F9B12 /* Packages */,
