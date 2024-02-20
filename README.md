@@ -2,11 +2,7 @@
 Drum on table
 
 ## Details
-pads on table
-hit pads
-pad make sound
-user choose sound
-record hitting pads
-export pad hitting
-
-see design doc
+pads on table  
+hit pads  
+pads call sounds on emitters    
+emitters play sounds  
