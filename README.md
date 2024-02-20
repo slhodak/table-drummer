@@ -1,8 +1,4 @@
 # Overview
-Drum on table
+VisionOS application to play drums with your hands. Uses skeletal hand tracking in Full Space to control colliders attached to index fingertips.
 
-## Details
-pads on table  
-hit pads  
-pads call sounds on emitters    
-emitters play sounds  
+Latest demo: https://youtu.be/aYySRdN8MTw
