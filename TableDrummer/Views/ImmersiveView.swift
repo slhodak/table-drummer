@@ -56,9 +56,15 @@ struct ImmersiveView: View {
         .gesture(RotateGesture()
             .targetedToAnyEntity()
             .onChanged { value in
-                print(value.rotation)
-                let radians = Float(value.rotation.radians)
-                value.entity.orientation = simd_quatf(angle: radians, axis: [0, 1, 0])
+                if value.entity.name.contains("Pad") || value.entity.name.contains("Emitter") {
+                    // Rotate pads and emitters around Z axis(?)
+                    let radians = Float(value.rotation.radians)
+                    value.entity.orientation = simd_quatf(angle: radians, axis: [0, 0, 1])
+                } else if value.entity.name.contains("ParentHandle") {
+                    // Rotate parent handles around Y axis
+                    let radians = Float(value.rotation.radians)
+                    value.entity.orientation = simd_quatf(angle: radians, axis: [0, 1, 0])
+                }
             })
     }
     

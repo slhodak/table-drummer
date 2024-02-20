@@ -172,29 +172,14 @@ class DrumsModel: ObservableObject {
     private func createPadAndEmitterParents(position: SIMD3<Float>, color: RealityFoundation.Material.Color) -> (ModelEntity, ModelEntity) {
         let parentSphereRadius: Float = 0.03
         
-        let padsParent = DrumsModel.createOrb(radius: parentSphereRadius, color: color, isMetallic: false)
-        padsParent.components.set(PhysicsBodyComponent(mode: .kinematic))
-        padsParent.components.set(InputTargetComponent(allowedInputTypes: .indirect))
-        
-        let emittersParent = DrumsModel.createOrb(radius: parentSphereRadius, color: color, isMetallic: true)
-        emittersParent.components.set(PhysicsBodyComponent(mode: .kinematic))
-        emittersParent.components.set(InputTargetComponent(allowedInputTypes: .indirect))
+        let padsParent = ParentHandle.create(position: position, radius: parentSphereRadius, color: color, isMetallic: false)
+        let emittersParent = ParentHandle.create(position: position, radius: parentSphereRadius, color: color, isMetallic: true)
         
         let yOffset = parentSphereRadius * 1.05
-        padsParent.position = position
         padsParent.position.y -= yOffset
-        emittersParent.position = position
         emittersParent.position.y += yOffset
         
         return (padsParent, emittersParent)
-    }
-    
-    static func createOrb(radius: Float, color: RealityFoundation.Material.Color, isMetallic: Bool) -> ModelEntity {
-        let orbMaterial = isMetallic ? getMetallicMaterial(color: color) : getMatteMaterial(color: color)
-        return ModelEntity(mesh: .generateSphere(radius: radius),
-                           materials: [orbMaterial],
-                           collisionShape: .generateSphere(radius: radius),
-                           mass: 0.0)
     }
     
     static func getMatteMaterial(color: RealityFoundation.Material.Color) -> SimpleMaterial {

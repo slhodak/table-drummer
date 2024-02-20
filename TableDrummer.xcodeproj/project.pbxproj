@@ -29,6 +29,7 @@
 		1759BBAB2B7AB62B00B97F36 /* ARSessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1759BBAA2B7AB62B00B97F36 /* ARSessionModel.swift */; };
 		175A68CD2B8416DF0006BE1C /* ElementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175A68CC2B8416DF0006BE1C /* ElementsView.swift */; };
 		175A68CF2B8421FC0006BE1C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175A68CE2B8421FC0006BE1C /* Constants.swift */; };
+		175A68D12B842B0A0006BE1C /* ParentHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175A68D02B842B0A0006BE1C /* ParentHandle.swift */; };
 		17FFA9CE2B814AE2002D76CC /* rock-ride-tip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 17FFA9CD2B814AE2002D76CC /* rock-ride-tip.wav */; };
 		17FFA9D02B814AF4002D76CC /* golden-crash.wav in Resources */ = {isa = PBXBuildFile; fileRef = 17FFA9CF2B814AF4002D76CC /* golden-crash.wav */; };
 		17FFA9D22B814C9B002D76CC /* heavy-rock-ride.wav in Resources */ = {isa = PBXBuildFile; fileRef = 17FFA9D12B814C9B002D76CC /* heavy-rock-ride.wav */; };
@@ -60,6 +61,7 @@
 		1759BBAA2B7AB62B00B97F36 /* ARSessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSessionModel.swift; sourceTree = "<group>"; };
 		175A68CC2B8416DF0006BE1C /* ElementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsView.swift; sourceTree = "<group>"; };
 		175A68CE2B8421FC0006BE1C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		175A68D02B842B0A0006BE1C /* ParentHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentHandle.swift; sourceTree = "<group>"; };
 		17FFA9CD2B814AE2002D76CC /* rock-ride-tip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "rock-ride-tip.wav"; sourceTree = "<group>"; };
 		17FFA9CF2B814AF4002D76CC /* golden-crash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "golden-crash.wav"; sourceTree = "<group>"; };
 		17FFA9D12B814C9B002D76CC /* heavy-rock-ride.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "heavy-rock-ride.wav"; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				174C08422B74BD6200AAC4FE /* DrumPad.swift */,
 				172F1A172B7593AD001F9B12 /* SoundEmitter.swift */,
 				17FFA9D32B81504A002D76CC /* TDColor.swift */,
+				175A68D02B842B0A0006BE1C /* ParentHandle.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				174CC9212B7432F0009B0C36 /* ContentView.swift in Sources */,
 				174CC91F2B7432F0009B0C36 /* TableDrummerApp.swift in Sources */,
 				174C08432B74BD6200AAC4FE /* DrumPad.swift in Sources */,
+				175A68D12B842B0A0006BE1C /* ParentHandle.swift in Sources */,
 				172F1A182B7593AD001F9B12 /* SoundEmitter.swift in Sources */,
 				1759BBAB2B7AB62B00B97F36 /* ARSessionModel.swift in Sources */,
 				17071F042B7ED934009C1760 /* DrumsModel.swift in Sources */,

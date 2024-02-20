@@ -44,14 +44,14 @@ struct ElementsView: View {
             
             Text("Pad Handle")
             RealityView { content in
-                let matteOrb = DrumsModel.createOrb(radius: 0.015, color: .gray, isMetallic: false)
+                let matteOrb = ParentHandle.createOrb(radius: 0.015, color: .gray, isMetallic: false)
                 matteOrb.position.z -= 0.175
                 content.add(matteOrb)
             }
             
             Text("Speaker Handle")
             RealityView { content in
-                let metallicOrb = DrumsModel.createOrb(radius: 0.015, color: .gray, isMetallic: true)
+                let metallicOrb = ParentHandle.createOrb(radius: 0.015, color: .gray, isMetallic: true)
                 metallicOrb.position.z -= 0.175
                 content.add(metallicOrb)
             }
