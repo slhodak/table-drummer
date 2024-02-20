@@ -7,19 +7,46 @@
 
 import Foundation
 import RealityKit
+import SwiftUI
 
 
 struct TDColor {
-    static let a = RealityFoundation.Material.Color(red: 0.216, green: 0.38, blue: 0.941, alpha: 1.0)
-    static let b = RealityFoundation.Material.Color(red: 0.216, green: 0.729, blue: 0.941, alpha: 1.0)
-    static let c = RealityFoundation.Material.Color(red: 0.216, green: 0.941, blue: 0.859, alpha: 1.0)
-    static let d = RealityFoundation.Material.Color(red: 0.216, green: 0.941, blue: 0.588, alpha: 1.0)
-    static let e = RealityFoundation.Material.Color(red: 0.831, green: 0.941, blue: 0.216, alpha: 1.0)
-    static let f = RealityFoundation.Material.Color(red: 0.941, green: 0.776, blue: 0.216, alpha: 1.0)
-    static let g = RealityFoundation.Material.Color(red: 0.941, green: 0.6, blue: 0.216, alpha: 1.0)
-    static let h = RealityFoundation.Material.Color(red: 0.941, green: 0.216, blue: 0.216, alpha: 1.0)
-    static let i = RealityFoundation.Material.Color(red: 0.941, green: 0.216, blue: 0.482, alpha: 1.0)
-    static let j = RealityFoundation.Material.Color(red: 0.941, green: 0.216, blue: 0.796, alpha: 1.0)
-    static let k = RealityFoundation.Material.Color(red: 0.812, green: 0.216, blue: 0.941, alpha: 1.0)
-    static let l = RealityFoundation.Material.Color(red: 0.592, green: 0.216, blue: 0.941, alpha: 1.0)
+    // Blues
+    static let a = RealityFoundation.Material.Color(red: 0.216, green: 0.322, blue: 0.941, alpha: 1.0)
+    static let b = RealityFoundation.Material.Color(red: 0.216, green: 0.690, blue: 0.941, alpha: 1.0)
+    static let c = RealityFoundation.Material.Color(red: 0.216, green: 0.918, blue: 0.941, alpha: 1.0)
+    
+    // Green-Yellow-Reds
+    static let d = RealityFoundation.Material.Color(red: 0.646, green: 0.941, blue: 0.216, alpha: 1.0)
+    static let e = RealityFoundation.Material.Color(red: 0.941, green: 0.933, blue: 0.216, alpha: 1.0)
+    static let f = RealityFoundation.Material.Color(red: 0.941, green: 0.725, blue: 0.216, alpha: 1.0)
+    static let g = RealityFoundation.Material.Color(red: 0.941, green: 0.380, blue: 0.216, alpha: 1.0)
+    
+    // Purple-Magentas
+    static let h = RealityFoundation.Material.Color(red: 0.941, green: 0.216, blue: 0.510, alpha: 1.0)
+    static let i = RealityFoundation.Material.Color(red: 0.941, green: 0.216, blue: 0.922, alpha: 1.0)
+}
+
+
+struct TDColorView: View {
+    var body: some View {
+        VStack {
+            Color(TDColor.a)
+            Color(TDColor.b)
+            Color(TDColor.c)
+            Color(TDColor.d)
+            Color(TDColor.e)
+            Color(TDColor.f)
+            Color(TDColor.g)
+            Color(TDColor.h)
+            Color(TDColor.i)
+        }
+    }
+}
+
+
+struct TDColorView_Previews: PreviewProvider {
+    static var previews: some View {
+        TDColorView()
+    }
 }

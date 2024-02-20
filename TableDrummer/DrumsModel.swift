@@ -7,6 +7,7 @@
 
 import Foundation
 import RealityKit
+import SwiftUI
 import TableDrummerContent
 
 
@@ -17,21 +18,27 @@ class DrumsModel: ObservableObject {
     private let tapDelayRequiredSeconds = 0.1
     
     let audioSamples: [String: [String: RealityFoundation.Material.Color]] = [
-        "core": [
+        TD.core: [
             "rock-kick-2": TDColor.a,
             "indie-rock-snare": TDColor.b,
             "heavy-rock-closed-hi-hat": TDColor.c,
         ],
-        "toms": [
+        TD.toms: [
             "heavy-rock-tom": TDColor.d,
             "heavy-rock-tom-2": TDColor.e,
             "heavy-rock-tom-3": TDColor.f,
             "heavy-rock-floor-tom": TDColor.g,
         ],
-        "cymbals": [
+        TD.cymbals: [
             "heavy-rock-ride": TDColor.h,
             "golden-crash": TDColor.i,
         ]
+    ]
+    
+    let parentColors: [String: RealityFoundation.Material.Color] = [
+        TD.core: TDColor.b,
+        TD.toms: TDColor.e,
+        TD.cymbals: TDColor.h,
     ]
     
     func setupEntity() -> Entity {
@@ -41,23 +48,26 @@ class DrumsModel: ObservableObject {
         let parentSpacing: Float = totalWidth/Float(audioSamples.count)
         var i = 0
         
-        for (_, sampleSet) in audioSamples {
-            guard  let firstSample = sampleSet.first else {
-                print("Error getting the first element in the Sets:Samples:Colors dict")
-                continue
+        for (sampleSetName, sampleSet) in audioSamples {
+            // Create + place parent orbs
+            var parentsColor = parentColors[sampleSetName]
+            if parentsColor == nil {
+                print("Error loading color for parent entity handle")
+                parentsColor = .gray
             }
             
-            // Create + place parent orbs
-            let (_, parentsColor) = firstSample
             let parentX = leftmostParentX + parentSpacing * Float(i+1)
-            
             let parentPosition = SIMD3<Float>(parentX, 1.0, -0.5)
-            let (padsParent, emittersParent) = createPadAndEmitterParents(position: parentPosition, color: parentsColor)
+            let (padsParent, emittersParent) = createPadAndEmitterParents(position: parentPosition, color: parentsColor!)
             
             let padSetWidth = padSpacing * Float(sampleSet.count - 1)
             var j = 0
             
             for (sampleName, color) in sampleSet {
+                if sampleName == "parentsColor" {
+                    continue
+                }
+                
                 // Only add pad and emitter if both can be made
                 guard let pad = DrumPad(name: sampleName),
                       let emitter = SoundEmitter(name: sampleName) else { continue }

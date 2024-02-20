@@ -18,7 +18,8 @@ struct ElementsView: View {
                 if let model = phase.model {
                     model.resizable()
                         .rotation3DEffect(Angle(degrees: -75), axis: (0.5, 0.2, -0.5))
-                        .scaledToFill()
+                        .scaledToFit()
+                        .frame(width: 40)
                 } else if phase.error != nil {
                     Color.red
                 } else {
@@ -31,27 +32,27 @@ struct ElementsView: View {
             Model3D(named: "Geometry/striped-emitter", bundle: tableDrummerContentBundle) { phase in
                 if let model = phase.model {
                     model.resizable()
-                        .scaledToFill()
+                        .scaledToFit()
+                        .frame(width: 40)
                 } else if phase.error != nil {
                     Color.red
                 } else {
                     ProgressView()
                 }
             }
-//            .frame(width: 100)
             .padding()
             
             Text("Pad Handle")
             RealityView { content in
                 let matteOrb = DrumsModel.createOrb(radius: 0.015, color: .gray, isMetallic: false)
-                matteOrb.position.z -= 0.2
+                matteOrb.position.z -= 0.175
                 content.add(matteOrb)
             }
             
             Text("Speaker Handle")
             RealityView { content in
                 let metallicOrb = DrumsModel.createOrb(radius: 0.015, color: .gray, isMetallic: true)
-                metallicOrb.position.z -= 0.2
+                metallicOrb.position.z -= 0.175
                 content.add(metallicOrb)
             }
         }
