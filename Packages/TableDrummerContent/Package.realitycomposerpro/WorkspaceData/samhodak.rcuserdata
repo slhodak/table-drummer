@@ -1,8 +1,7 @@
 {
   "advancedEditorSelectedIdentifier" : "ProjectBrowser",
   "openSceneRelativePaths" : [
-    "Geometry\/drum-pad.usda",
-    "Geometry\/striped-emitter.usda"
+    "Geometry\/pad-tall.usda"
   ],
   "recentIdentifiers" : {
     "03ECABB0-33A3-4A1E-BA15-66AB19526D51" : [
@@ -2516,5 +2515,5 @@
       }
     ]
   },
-  "selectedSceneRelativePath" : "Geometry\/striped-emitter.usda"
+  "selectedSceneRelativePath" : "Geometry\/pad-tall.usda"
 }
